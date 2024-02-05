@@ -540,6 +540,11 @@ border-radius: 6px;
 
 }
 
+.msg{
+    color: rgb(14, 183, 50);
+    margin-top: -20px;
+    display: block;
+}
 
 
 
