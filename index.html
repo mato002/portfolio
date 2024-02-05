@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal  portfolio  Website </title>
+    <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+
+            <nav>
+                <img src="images/matechlogo.png"  class="logo">
+                <i class="fa-solid fa-bars" onclick="openMenu()" ></i>
+                <ul id="sideMenu" >
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-regular fa-rectangle-xmark" onclick="closeMenu()" ></i>
+                </ul>
+                
+
+
+            </nav>
+            <div class="header_text">
+                <p>UX/UI designer</p>
+                <h1>hi, i am <span>Mathias</span> <br> Odhiambo from Kenya</h1>
+            </div>
+        </div>
+    </div>
+    <!---------------about--------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                  <img src="images/user.png">
+                <div>
+                    <div class="about-col-2">
+                        <h1 class="sub-titte">About Me</h1>
+                        <p>hi ,  this is  my first portfolio ever , how  i  wish that  it  pleases  the  viewers,  and  
+                            if  you  feel  it needs  some  changes  help  me know  where  so that  i may  improve  my  skills,
+                        thanks in  advance  </p>
+                        <div class="tab-tittles">
+                            <p class="tab-links active-link" onclick="openTab('skills')">skills</p>
+                            <p class="tab-links " onclick="openTab('experience')">Experience</p>
+                            <p class="tab-links " onclick="openTab('education')">Education</p>
+                            
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+
+                            <li><span>UI/UX</span><br>Design Web/App interfaces</li>
+                            <li><span>Web development</span><br>Web app development</li>
+                            <li><span>App development</span><br>Building Android/Ios apps</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2021 - current</span><br>UI/UX Design Training at ET institute</li>
+                                <li><span>2019 - 2021</span><br>UI/UX Design Training at ET institute</li>
+                                <li><span>2017 - 2019</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                                <li><span>2016 - 2017</span><br>internship at Ekart eCommerce</li>
+
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-contents" id="education">
+                             <ul>
+                                <li><span>2016</span><br>UX?UI Design Training at ET institute</li>
+                                <li><span>2016</span><br>MBA from MIT Bangalore</li>
+                                <li><span>2014</span><br>MBA from MIT Bangalore</li>
+                             </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------services------ -->
+    <div id="services">
+          <div class="container">
+            <h1 class="sub-tittle">My Services</h1>
+            <div class="services-list">
+               <div>
+                <i class="fas fa -code"></i>
+                 
+                <h2>Web Design</h2>
+                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
+                <a href="#">learn more</a>
+               </div> 
+               <div>
+                <i class="fas fa-crop-alt"></i>
+                <h2>UX Design</h2>
+                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
+                <a href="#">learn more</a>
+               </div>
+               <div>
+                <i class="fab fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
+                <a href="#">learn more</a>
+               </div>
+            </div>
+          </div>
+    </div>
+    <!-- -------portfolio------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-tittle">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app  connects  you  to the  talented  people  around the  world.
+                            Download  it  from the play store
+                        </p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" >
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app  connects  you  to the  talented  people  around the  world.
+                            Download  it  from the play store
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Food Delivery  app</h3>
+                        <p>The app  connects  you  to the  talented  people  around the  world.
+                            Download  it  from the play store
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn">See More</a>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <p><h1 class="sub-tittle">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>matechodhis@gmai.com</p>
+                        
+                    <p><i class="fa-solid fa-phone-volume"></i> 0111369814</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com"> <i class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                    <a href="" class="btn btn2">Download CV</a>
+
+                    
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text"  name="Name" placeholder="Your Name" required>
+                        <input type="email"  name="Email" placeholder="Your Email" required>
+                        <textarea name="Message"  rows="6"  placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+
+                    </form>
+
+                </div>
+            </ div>
+
+        </div>
+        <div class="copyright">
+            <p>Copyright <i class="fa-solid fa-copyright"></i>  Matech Made wtih<i class="fa-solid fa-heart"></i>by matech's foundation</p>
+        </div>
+    </div>
+
+<script src="./index.js"></script>
+</body>
+</html> 
+
+
+
+   
