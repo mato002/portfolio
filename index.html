@@ -5,75 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal  portfolio  Website </title>
     <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
     <div id="header">
         <div class="container">
 
             <nav>
                 <img src="images/matechlogo.png"  class="logo">
-                <i class="fa-solid fa-bars" onclick="openMenu()" ></i>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
                 <ul id="sideMenu" >
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fa-regular fa-rectangle-xmark" onclick="closeMenu()" ></i>
+                    <i class="fa-regular fa-rectangle-xmark" onclick="closeMenu()"></i>
                 </ul>
                 
 
 
             </nav>
+            <div class="header_content">
             <div class="header_text">
-                <p>UX/UI designer</p>
-                <h1>hi, i am <span>Mathias</span> <br> Odhiambo from Kenya</h1>
+                    <div class="intro-text">
+                        <span class="greeting">Hello, I'm</span>
+                        <h1 class="name">Mathias <span class="highlight">Odhiambo</span></h1>
+                        <div class="title-container">
+                            <h2 class="job-title">UX/UI Designer & Full-Stack Developer</h2>
+                            <div class="title-underline"></div>
+                        </div>
+                        <p class="description">Passionate about creating exceptional digital experiences through innovative design and robust development solutions. Based in Nairobi, Kenya.</p>
+                        <div class="cta-buttons">
+                            <a href="#portfolio" class="btn-primary">View My Work</a>
+                            <a href="#contact" class="btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_image">
+                    <div class="image-container">
+                        <img src="images/background.jpg" alt="Mathias Odhiambo" class="profile-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!---------------about--------------->
     <div id="about">
         <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                  <img src="images/user.png">
-                <div>
-                    <div class="about-col-2">
-                        <h1 class="sub-titte">About Me</h1>
-                        <p>hi ,  this is  my first portfolio ever , how  i  wish that  it  pleases  the  viewers,  and  
-                            if  you  feel  it needs  some  changes  help  me know  where  so that  i may  improve  my  skills,
-                        thanks in  advance  </p>
-                        <div class="tab-tittles">
-                            <p class="tab-links active-link" onclick="openTab('skills')">skills</p>
-                            <p class="tab-links " onclick="openTab('experience')">Experience</p>
-                            <p class="tab-links " onclick="openTab('education')">Education</p>
-                            
+            <div class="about-header">
+                <h1 class="section-title">About Me</h1>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image-section">
+                    <div class="image-wrapper">
+                        <img src="images/user.png" alt="Mathias Odhiambo" class="about-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>5+ Years Experience</h3>
+                                <p>Full-Stack Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text-section">
+                    <div class="intro-text">
+                        <h2>Passionate Developer & Designer</h2>
+                        <p>I'm a dedicated UX/UI Designer and Full-Stack Developer with over 5 years of experience creating exceptional digital solutions. My passion lies in transforming complex problems into intuitive, beautiful designs that drive real business growth.</p>
+                        
+                        <div class="highlight-points">
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>User-centered design approach</span>
+                            </div>
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Modern technology stack expertise</span>
+                            </div>
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Cross-platform development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" onclick="openTab('skills')">
+                            <i class="fa-solid fa-code"></i>
+                            Skills
+                        </button>
+                        <button class="tab-btn" onclick="openTab('experience')">
+                            <i class="fa-solid fa-briefcase"></i>
+                            Experience
+                        </button>
+                        <button class="tab-btn" onclick="openTab('education')">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Education
+                        </button>
                         </div>
                         <div class="tab-contents active-tab" id="skills">
-                            <ul>
-
-                            <li><span>UI/UX</span><br>Design Web/App interfaces</li>
-                            <li><span>Web development</span><br>Web app development</li>
-                            <li><span>App development</span><br>Building Android/Ios apps</li>
-                            </ul>
+                            <div class="skills-container">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>UI/UX Design</span>
+                                        <span>95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Web Development</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Mobile Development</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>JavaScript</span>
+                                        <span>88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Laravel/PHP</span>
+                                        <span>92%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Database Design</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-contents" id="experience">
                             <ul>
-                                <li><span>2021 - current</span><br>UI/UX Design Training at ET institute</li>
-                                <li><span>2019 - 2021</span><br>UI/UX Design Training at ET institute</li>
-                                <li><span>2017 - 2019</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
-                                <li><span>2016 - 2017</span><br>internship at Ekart eCommerce</li>
+                                <li><span>2021 - Current</span><br>Senior UX/UI Designer at Tech Solutions Ltd.</li>
+                                <li><span>2019 - 2021</span><br>UX/UI Designer at Digital Innovations Inc.</li>
+                                <li><span>2017 - 2019</span><br>Junior Designer at Coin Digital Ltd.</li>
+                                <li><span>2016 - 2017</span><br>Design Intern at Ekart eCommerce</li>
 
                             </ul>
                         </div>
                         
                         <div class="tab-contents" id="education">
                              <ul>
-                                <li><span>2016</span><br>UX?UI Design Training at ET institute</li>
-                                <li><span>2016</span><br>MBA from MIT Bangalore</li>
-                                <li><span>2014</span><br>MBA from MIT Bangalore</li>
+                                <li><span>2020</span><br>UX/UI Design Certification from Google</li>
+                                <li><span>2018</span><br>BSc Computer Science from University of Nairobi</li>
+                                <li><span>2016</span><br>Diploma in Graphic Design from Kenya Institute of Design</li>
                              </ul>
                         </div>
 
@@ -87,26 +202,70 @@
     <!-- --------services------ -->
     <div id="services">
           <div class="container">
-            <h1 class="sub-tittle">My Services</h1>
-            <div class="services-list">
-               <div>
-                <i class="fas fa -code"></i>
-                 
-                <h2>Web Design</h2>
-                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
-                <a href="#">learn more</a>
+            <div class="services-header">
+                <h1 class="section-title">My Services</h1>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive, modern websites that deliver exceptional user experiences and drive business growth through strategic design and development.</p>
+                    <ul class="service-features">
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                        <li>SEO Friendly</li>
+                        <li>Cross-browser Compatible</li>
+                    </ul>
+                    <a href="#portfolio" class="service-btn">View Projects</a>
                </div> 
-               <div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
                 <i class="fas fa-crop-alt"></i>
-                <h2>UX Design</h2>
-                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
-                <a href="#">learn more</a>
+                    </div>
+                    <h3>UX/UI Design</h3>
+                    <p>Designing intuitive user experiences through research, wireframing, and prototyping to create products that users love and businesses need.</p>
+                    <ul class="service-features">
+                        <li>User Research</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                    <a href="#portfolio" class="service-btn">View Projects</a>
                </div>
-               <div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
                 <i class="fab fa-app-store"></i>
-                <h2>App Design</h2>
-                <p>forever  this  remains  to be  the  most  likable vand  marketable field</p>
-                <a href="#">learn more</a>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Building cross-platform mobile applications that provide seamless experiences across iOS and Android devices using modern frameworks.</p>
+                    <ul class="service-features">
+                        <li>React Native</li>
+                        <li>Flutter Development</li>
+                        <li>Native iOS/Android</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                    <a href="#portfolio" class="service-btn">View Projects</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Building robust, scalable backend systems using Laravel and modern PHP frameworks to power your applications and APIs.</p>
+                    <ul class="service-features">
+                        <li>Laravel Framework</li>
+                        <li>RESTful APIs</li>
+                        <li>Database Design</li>
+                        <li>Cloud Integration</li>
+                    </ul>
+                    <a href="#portfolio" class="service-btn">View Projects</a>
                </div>
             </div>
           </div>
@@ -115,14 +274,13 @@
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-tittle">My Work</h1>
-            <div class="work-list">
+            <div class="work-list" id="visible-projects">
                 <div class="work">
                     <img src="images/work-1.png">
 
                     <div class="layer">
-                        <h3>Social Media App</h3>
-                        <p>The app  connects  you  to the  talented  people  around the  world.
-                            Download  it  from the play store
+                        <h3>Civic Volunteering Platform</h3>
+                        <p>A comprehensive platform connecting volunteers with community service opportunities. Features include event management, volunteer tracking, and impact reporting.
                         </p>
                         <a href="#"><i class="fa-solid fa-link"></i></a>
                     </div>
@@ -130,9 +288,8 @@
                 <div class="work">
                     <img src="images/work-2.png" >
                     <div class="layer">
-                        <h3>Music App</h3>
-                        <p>The app  connects  you  to the  talented  people  around the  world.
-                            Download  it  from the play store
+                        <h3>Campus Event Management System</h3>
+                        <p>An integrated system for managing university events, including registration, ticketing, scheduling, and attendee management with real-time updates.
                         </p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
@@ -140,9 +297,39 @@
                 <div class="work">
                     <img src="images/work-3.png">
                     <div class="layer">
-                        <h3>Food Delivery  app</h3>
-                        <p>The app  connects  you  to the  talented  people  around the  world.
-                            Download  it  from the play store
+                        <h3>Draja 360 Platform</h3>
+                        <p>A comprehensive 360-degree business solution platform providing integrated services for modern enterprises with advanced analytics and reporting.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden projects -->
+            <div class="work-list hidden-projects" id="hidden-projects" style="margin-top: 30px; display: none;">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>PCIP Loan Tracking Platform</h3>
+                        <p>A sophisticated loan management system for tracking loan details, payments, schedules, and borrower information with comprehensive reporting features.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>E-Commerce Solution</h3>
+                        <p>A full-featured e-commerce platform with inventory management, payment processing, order tracking, and customer relationship management.
+                        </p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Healthcare Management System</h3>
+                        <p>An integrated healthcare platform for patient management, appointment scheduling, medical records, and telemedicine capabilities.
                         </p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
@@ -150,14 +337,197 @@
             </div>
         </div>
     </div>
-    <a href="#" class="btn">See More</a>
+    <a href="#" class="btn" id="see-more-btn" onclick="toggleProjects()">See More</a>
+    
+    <!-- Testimonials Section -->
+    <div id="testimonials">
+        <div class="container">
+            <h1 class="sub-tittle">What Clients Say</h1>
+            <div class="testimonials-list">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Mathias delivered an exceptional UX design that increased our user engagement by 40%. His attention to detail and user-centered approach made all the difference."</p>
+                        <div class="testimonial-author">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechStart Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with Mathias was a game-changer. He transformed our complex requirements into an intuitive mobile app that our users absolutely love."</p>
+                        <div class="testimonial-author">
+                            <h4>David Kimani</h4>
+                            <p>Product Manager, Digital Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Mathias's web development skills are outstanding. He created a responsive, fast-loading website that perfectly represents our brand."</p>
+                        <div class="testimonial-author">
+                            <h4>Grace Mwangi</h4>
+                            <p>Marketing Director, Creative Agency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Case Studies Section -->
+    <div id="case-studies">
+        <div class="container">
+            <h1 class="sub-tittle">Case Studies</h1>
+            <div class="case-studies-grid">
+                <div class="case-study">
+                    <div class="case-image">
+                        <img src="images/work-1.png" alt="Civic Volunteering Platform">
+                    </div>
+                    <div class="case-content">
+                        <h3>Civic Volunteering Platform</h3>
+                        <p class="case-category">Full-Stack Development • Laravel • React</p>
+                        <p class="case-description">A comprehensive platform connecting volunteers with community service opportunities. Built with Laravel backend and React frontend, featuring real-time notifications and impact tracking.</p>
+                        <div class="case-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">500+</span>
+                                <span class="result-label">Active Volunteers</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">95%</span>
+                                <span class="result-label">User Satisfaction</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-link">View Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-image">
+                        <img src="images/work-2.png" alt="Campus Event Management">
+                    </div>
+                    <div class="case-content">
+                        <h3>Campus Event Management System</h3>
+                        <p class="case-category">Backend Development • Laravel • API Design</p>
+                        <p class="case-description">An integrated system for managing university events with advanced ticketing, scheduling, and attendee management features. Built with Laravel and RESTful API architecture.</p>
+                        <div class="case-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <div class="case-results">
+                            <div class="result-item">
+                                <span class="result-number">10K+</span>
+                                <span class="result-label">Events Managed</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-number">40%</span>
+                                <span class="result-label">Efficiency Gain</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-link">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Certifications Section -->
+    <div id="certifications">
+        <div class="container">
+            <h1 class="sub-tittle">Certifications & Achievements</h1>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fa-brands fa-laravel"></i>
+                    </div>
+                    <h3>Laravel Certified Developer</h3>
+                    <p>Laravel Framework Mastery</p>
+                    <span class="cert-date">2023</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <h3>Google UX Design Certificate</h3>
+                    <p>User Experience Design Specialization</p>
+                    <span class="cert-date">2022</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p>Cloud Computing Fundamentals</p>
+                    <span class="cert-date">2023</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3>JavaScript Algorithms</h3>
+                    <p>FreeCodeCamp Certification</p>
+                    <span class="cert-date">2022</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Blog Section -->
+    <div id="blog">
+        <div class="container">
+            <h1 class="sub-tittle">Latest Articles</h1>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="images/work-1.png" alt="Laravel Best Practices">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 15, 2023</span>
+                        <h3>Laravel Best Practices for Scalable Applications</h3>
+                        <p>Learn the essential Laravel patterns and practices that will help you build maintainable and scalable web applications...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="images/work-2.png" alt="UX Design Trends">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 10, 2023</span>
+                        <h3>2024 UX Design Trends to Watch</h3>
+                        <p>Explore the latest UX design trends that will shape user experiences in 2024 and beyond...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="images/work-3.png" alt="Mobile Development">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 5, 2023</span>
+                        <h3>Building Cross-Platform Mobile Apps</h3>
+                        <p>Discover the best practices for creating mobile applications that work seamlessly across different platforms...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    
     <div id="contact">
         <div class="container">
             <div class="row">
                 <div class="contact-left">
-                    <p><h1 class="sub-tittle">Contact Me</h1>
-                    <p><i class="fa-regular fa-envelope"></i>matechodhis@gmai.com</p>
-                        
+                    <h1 class="sub-tittle">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>matechodhis@gmail.com</p>
                     <p><i class="fa-solid fa-phone-volume"></i> 0111369814</p>
                     <div class="social-icons">
                         <a href="https://www.linkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -165,7 +535,7 @@
                         <a href="https://www.instagram.com"> <i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com"> <i class="fa-brands fa-square-facebook"></i></a>
                     </div>
-                    <a href="" class="btn btn2">Download CV</a>
+                    <a href="images/my-cv.pdf" class="btn btn2" download="Mathias_Odhiambo_CV.pdf">Download CV</a>
 
                     
                 </div>
@@ -173,20 +543,113 @@
                     <form name="submit-to-google-sheet">
                         <input type="text"  name="Name" placeholder="Your Name" required>
                         <input type="email"  name="Email" placeholder="Your Email" required>
-                        <textarea name="Message"  rows="6"  placeholder="Your Message"></textarea>
+                        <textarea name="Message"  rows="6"  placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
-
                     </form>
                     <span class="msg"></span>
 
+                    <!-- Alternative contact method -->
+                    <div class="alternative-contact">
+                        <p style="margin-top: 20px; color: #ababab; font-size: 14px;">
+                            Or send me an email directly: 
+                            <a href="mailto:matechodhis@gmail.com?subject=Portfolio Contact" style="color: #ff004f; text-decoration: none;">
+                                matechodhis@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
                 </div>
-            </ div>
+                </div>
 
         </div>
-        <div class="copyright">
-            <p>Copyright <i class="fa-solid fa-copyright"></i>  Matech Made wtih<i class="fa-solid fa-heart"></i>by matech's foundation</p>
         </div>
     </div>
+    
+    <!-- Professional Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/matechlogo.png" alt="Mathias Odhiambo" class="footer-logo-img">
+                        <h3>Mathias Odhiambo</h3>
+                    </div>
+                    <p class="footer-description">
+                        Passionate UX/UI Designer and Full-Stack Developer creating exceptional digital experiences that drive business growth.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com" class="social-link" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.github.com" class="social-link" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.twitter.com" class="social-link" target="_blank">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="social-link" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">UX/UI Design</a></li>
+                        <li><a href="#services">Mobile Development</a></li>
+                        <li><a href="#services">Backend Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>matechodhis@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+254 111 369 814</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 Mathias Odhiambo. All rights reserved.
+                    </p>
+                    <p class="made-with">
+                        Made with <i class="fa-solid fa-heart"></i> by Mathias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
 <script src="./index.js"></script>
 </body>
