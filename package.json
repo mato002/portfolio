@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-cv-generator",
+  "version": "1.0.0",
+  "description": "CV PDF Generator for Portfolio",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "generate-cv": "node generate-pdf.js"
+  },
+  "keywords": ["cv", "pdf", "generator"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
+

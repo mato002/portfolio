@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #ff004f, #ff6b6b);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .field {
+            margin-bottom: 25px;
+        }
+        .field-label {
+            font-weight: bold;
+            color: #ff004f;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .field-value {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ff004f;
+            font-size: 15px;
+            color: #333;
+        }
+        .message-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #ff004f;
+            white-space: pre-wrap;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100px;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+        }
+        .footer a {
+            color: #ff004f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>📧 New Contact Form Submission</h2>
+            <p>You received a new message from your portfolio website</p>
+        </div>
+        
+        <div class="content">
+            <div class="field">
+                <span class="field-label">👤 From Name:</span>
+                <div class="field-value">{{from_name}}</div>
+            </div>
+            
+            <div class="field">
+                <span class="field-label">📧 Email Address:</span>
+                <div class="field-value">{{from_email}}</div>
+            </div>
+            
+            <div class="field">
+                <span class="field-label">💬 Message:</span>
+                <div class="message-box">{{message}}</div>
+            </div>
+            
+            <div class="field">
+                <span class="field-label">📅 Submitted At:</span>
+                <div class="field-value">{{date}}</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>This email was sent from your portfolio contact form.</strong></p>
+            <p>Reply directly to: <a href="mailto:{{from_email}}">{{from_email}}</a></p>
+            <p style="margin-top: 15px; color: #999;">Portfolio Contact Form - Mathias Odhiambo</p>
+        </div>
+    </div>
+</body>
+</html>

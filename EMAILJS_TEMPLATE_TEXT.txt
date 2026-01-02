@@ -1,0 +1,26 @@
+Subject: New Contact Form Submission from Portfolio
+
+Hello Mathias,
+
+You received a new message from your portfolio contact form:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FROM NAME:
+{{from_name}}
+
+EMAIL ADDRESS:
+{{from_email}}
+
+MESSAGE:
+{{message}}
+
+SUBMITTED AT:
+{{date}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Reply directly to: {{from_email}}
+
+---
+Portfolio Contact Form - Mathias Odhiambo

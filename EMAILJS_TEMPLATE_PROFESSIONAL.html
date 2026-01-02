@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .email-header {
+            background: linear-gradient(135deg, #ff004f 0%, #ff6b6b 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .email-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        .email-header p {
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+        .email-body {
+            padding: 40px 30px;
+            background-color: #ffffff;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+        .info-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666666;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .info-value {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .message-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .message-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666666;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .message-content {
+            background-color: #f9f9f9;
+            border-left: 4px solid #ff004f;
+            padding: 20px;
+            border-radius: 4px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #2c2c2c;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 80px;
+        }
+        .meta-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e8e8;
+        }
+        .meta-item {
+            font-size: 12px;
+            color: #888888;
+            margin-bottom: 5px;
+        }
+        .email-footer {
+            background-color: #fafafa;
+            padding: 25px 30px;
+            text-align: center;
+            border-top: 1px solid #e8e8e8;
+        }
+        .email-footer p {
+            font-size: 12px;
+            color: #888888;
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+        .email-footer a {
+            color: #ff004f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .email-footer a:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e8e8e8, transparent);
+            margin: 20px 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-header,
+            .email-body,
+            .email-footer {
+                padding: 25px 20px;
+            }
+            .email-header h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>New Contact Form Submission</h1>
+            <p>Portfolio Website Inquiry</p>
+        </div>
+        
+        <!-- Body -->
+        <div class="email-body">
+            <!-- Contact Information -->
+            <div class="info-section">
+                <span class="info-label">Contact Name</span>
+                <div class="info-value">{{from_name}}</div>
+            </div>
+            
+            <div class="info-section">
+                <span class="info-label">Email Address</span>
+                <div class="info-value">
+                    <a href="mailto:{{from_email}}" style="color: #ff004f; text-decoration: none;">{{from_email}}</a>
+                </div>
+            </div>
+            
+            <!-- Message Section -->
+            <div class="message-section">
+                <span class="message-label">Message</span>
+                <div class="message-content">{{message}}</div>
+            </div>
+            
+            <!-- Meta Information -->
+            <div class="meta-section">
+                <div class="meta-item">
+                    <strong>Submitted:</strong> {{date}}
+                </div>
+                <div class="meta-item">
+                    <strong>Source:</strong> Portfolio Contact Form
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <p><strong>Mathias Odhiambo</strong> | UX/UI Designer & Full-Stack Developer</p>
+            <p>Reply to this email to respond directly to: <a href="mailto:{{from_email}}">{{from_email}}</a></p>
+            <div class="divider"></div>
+            <p style="font-size: 11px; color: #aaaaaa;">This email was automatically generated from your portfolio contact form.</p>
+        </div>
+    </div>
+</body>
+</html>
