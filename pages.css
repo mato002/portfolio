@@ -157,3 +157,199 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
     .about-page .tab-btn { justify-content: center; padding: 10px 7px; font-size: .76rem; }
     .about-page .tab-btn i { display: none; }
 }
+
+/* Mobile layouts use mobile-first spacing and navigation instead of shrinking desktop components. */
+@media (max-width: 768px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
+    body:not(:has(#header)) { padding-top: 82px; }
+
+    nav#mainNav,
+    nav#mainNav.nav-hidden,
+    nav#mainNav.nav-visible {
+        min-height: 76px;
+        padding: 4px 0;
+        background: rgba(247,245,240,.97);
+        background-image: none;
+        box-shadow: 0 8px 24px rgba(29,48,64,.1);
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+    nav#mainNav::before { display: none; }
+    nav#mainNav .container { min-height: 68px; padding: 0 16px; }
+    nav#mainNav .logo { width: 68px; height: 68px; object-fit: contain; }
+    nav#mainNav .menu-toggle {
+        display: inline-flex !important;
+        min-width: 0;
+        min-height: 46px;
+        height: 46px;
+        padding: 0 15px !important;
+        border: 1px solid rgba(29,48,64,.14) !important;
+        border-radius: 999px;
+        background: white !important;
+        color: var(--ink) !important;
+        box-shadow: 0 4px 12px rgba(29,48,64,.08) !important;
+        font-size: .9rem;
+    }
+    nav#mainNav .menu-toggle .fa-solid.fa-bars { color: var(--ink) !important; font-size: 17px; }
+    nav#mainNav .menu-text { color: var(--ink) !important; font-size: .88rem; }
+    nav#mainNav ul {
+        width: min(280px, 86vw);
+        max-width: 86vw;
+        height: 100dvh;
+        padding: 86px 0 max(18px, env(safe-area-inset-bottom));
+        border-left: 1px solid rgba(255,255,255,.12) !important;
+        background: #1d3040 !important;
+        box-shadow: -18px 0 48px rgba(10,25,35,.24);
+    }
+    nav#mainNav ul li { padding: 0 14px; }
+    nav#mainNav ul li a:not(.menu-close) {
+        min-height: 52px;
+        padding: 12px 14px !important;
+        border-bottom: 1px solid rgba(255,255,255,.11) !important;
+        font-size: 1rem !important;
+        text-shadow: none !important;
+    }
+    nav#mainNav .menu-close-wrapper { padding: 16px 14px !important; border-color: rgba(255,255,255,.12) !important; }
+    nav#mainNav .menu-close { min-height: 48px; height: 48px; border: 0 !important; border-radius: 12px; background: rgba(255,255,255,.1) !important; box-shadow: none; font-size: .92rem; }
+
+    body:has(#header) nav#mainNav.nav-hidden { opacity: 1; transform: none; pointer-events: auto; }
+    #header { min-height: 0; padding-bottom: 0; }
+    #header .header_content { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 98px 20px 42px; }
+    #header .header_text, #header .intro-text { width: 100%; max-width: none; }
+    #header .header-social-links { display: none; }
+    #header .header-social-links { top: 20px; left: 20px; }
+    #header .greeting { display: inline-block; margin-bottom: 16px; font-size: .68rem; line-height: 1.5; letter-spacing: .1em; }
+    #header .name { margin: 0 0 14px; font-size: clamp(2.7rem, 12vw, 4.3rem); line-height: .98; }
+    #header .title-container { margin-bottom: 16px; }
+    #header .job-title { margin: 0; font-size: clamp(1.16rem, 5vw, 1.45rem); line-height: 1.35; }
+    #header .title-underline { margin-top: 13px; }
+    #header .technologies { justify-content: flex-start; gap: 6px; margin: 18px 0; }
+    #header .tech-item { padding: 5px 9px; border-radius: 999px; background: rgba(255,255,255,.11); font-size: .72rem; }
+    #header .tech-separator { display: none; }
+    #header .description { margin: 0 0 22px; font-size: .98rem; line-height: 1.65; }
+    #header .cta-buttons { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; width: 100%; }
+    #header .cta-buttons .btn-primary { grid-column: 1 / -1; }
+    #header .cta-buttons .btn-primary,
+    #header .cta-buttons .btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-width: 0; width: 100%; min-height: 48px; padding: 10px 12px; border-radius: 13px; font-size: .88rem; line-height: 1.25; }
+    #header .cta-buttons .btn-ai-demo { justify-self: start; padding: 9px 0; font-size: .86rem; }
+    #header .header_image { display: none; }
+
+    .home-business { padding: 38px 0; }
+    .home-business-layout { grid-template-columns: 1fr; gap: 18px; }
+    .home-business-copy h2 { font-size: clamp(1.85rem, 8vw, 2.45rem); }
+    .home-business-copy p:not(.home-work-eyebrow) { margin: 12px 0; font-size: .96rem; line-height: 1.65; }
+    .home-business-examples { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+    .home-business-examples span { display: flex; align-items: center; min-height: 43px; padding: 9px 11px; border-radius: 13px; font-size: .76rem; line-height: 1.25; }
+    .home-work { padding: 48px 0 56px; }
+    .home-work-heading { margin-bottom: 22px; }
+    .home-work-heading h2 { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+    .home-work-heading p:not(.home-work-eyebrow) { font-size: .94rem; line-height: 1.6; }
+    .home-work-link { min-height: 44px; }
+    .home-work-grid { grid-template-columns: 1fr; gap: 11px; }
+    .home-work-card { min-height: 0; padding: 19px; border-radius: 17px; }
+    .home-work-icon { margin-bottom: 12px; }
+    .home-work-tags { padding-top: 12px; }
+
+    body:not(:has(#header)) > #about.about-page,
+    body:not(:has(#header)) > #services.services-page,
+    body:not(:has(#header)) > #portfolio,
+    body:not(:has(#header)) > #ai-demo,
+    body:not(:has(#header)) > #contact { min-height: 0; padding: 34px 0 52px; }
+    body:not(:has(#header)) > #about.about-page,
+    body:not(:has(#header)) > #services.services-page { padding-top: 34px; }
+    body:not(:has(#header)) > #portfolio > .container,
+    body:not(:has(#header)) > #ai-demo > .container,
+    body:not(:has(#header)) > #contact .container { padding-right: 18px; padding-left: 18px; }
+
+    .services-page .services-header { margin-bottom: 26px; }
+    .services-page .section-title { font-size: clamp(2.2rem, 10vw, 3.1rem); line-height: 1; }
+    .services-page .section-subtitle { margin-top: 26px; font-size: .95rem; line-height: 1.6; }
+    .services-page .service-spotlight { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px !important; padding: 22px !important; border-radius: 22px; }
+    .services-page .service-spotlight::before { display: none; }
+    .services-page .service-spotlight .service-icon,
+    .services-page .service-spotlight h3,
+    .services-page .service-spotlight p,
+    .services-page .service-spotlight .service-btn { grid-column: 1; grid-row: auto; }
+    .services-page .service-spotlight h3 { font-size: 1.4rem; }
+    .services-page .service-spotlight p { font-size: .92rem; line-height: 1.6; }
+    .services-page .services-grid { grid-template-columns: 1fr; gap: 11px; }
+    .services-page .services-grid .service-card { padding: 20px; border-radius: 18px; }
+    .services-page .services-grid .service-icon { width: 42px; height: 42px; margin-bottom: 14px; border-radius: 13px; font-size: 17px; }
+    .services-page .services-grid .service-card h3 { font-size: 1.12rem; }
+    .services-page .services-grid .service-card p { font-size: .89rem; }
+    .services-page .service-features { gap: 6px; margin-bottom: 12px; }
+    .services-page .service-features li { font-size: .8rem; }
+    .services-page > .container > .section-subtitle { margin-top: 22px !important; padding: 13px 15px; font-size: .84rem; }
+
+    .about-page .about-content { gap: 25px; }
+    .about-page .about-image-section { width: 100%; max-width: none; }
+    .about-page .image-wrapper { width: 100%; max-width: none; aspect-ratio: 1.35 / 1; border-radius: 22px; }
+    .about-page .image-overlay { padding: 48px 18px 17px; }
+    .about-page .intro-text h2 { font-size: clamp(1.85rem, 8vw, 2.55rem); line-height: 1.06; }
+    .about-page .intro-text > p:not(.current-focus) { font-size: .96rem; line-height: 1.68; }
+    .about-page .intro-text p.current-focus { margin: 18px 0; padding: 15px 16px; font-size: .9rem; }
+    .about-page .highlight-points { gap: 8px; margin-bottom: 22px; }
+    .about-page .point { min-height: 54px; padding: 10px 12px; font-size: .83rem; }
+    .about-page .tab-navigation { gap: 4px; margin-bottom: 10px; padding: 4px; }
+    .about-page .tab-btn { min-height: 42px; }
+    .about-page .tab-contents { padding: 14px; border-radius: 16px; }
+    .about-page .skill-item { padding: 12px; }
+    .about-page .tab-contents ul li { padding: 13px 14px; font-size: .9rem; }
+
+    .section-header { margin-bottom: 25px; text-align: left; }
+    .section-header .section-title,
+    .section-header .section-subtitle { text-align: left; }
+    .section-header .section-title::after { left: 0; transform: none; }
+    .project-note { margin: 0 0 20px; text-align: left; font-size: .78rem; line-height: 1.5; }
+    .projects-grid { grid-template-columns: 1fr; gap: 13px; margin-bottom: 0; }
+    .project-image { height: 185px; }
+    .project-info { padding: 18px; }
+    .project-info h3 { font-size: 1.1rem; line-height: 1.25; }
+    .project-description { font-size: .9rem; line-height: 1.55; }
+    .project-tech { gap: 6px; }
+    .project-tech .tech-badge { padding: 5px 8px; font-size: .7rem; }
+
+    .ai-demo-heading { text-align: left; }
+    #ai-demo .section-title,
+    #ai-demo .section-subtitle { text-align: left; }
+    #ai-demo .section-title::after { left: 0; transform: none; }
+    #ai-demo .section-subtitle { margin: 24px 0 0; font-size: .94rem; line-height: 1.6; }
+    .ai-demo-layout { grid-template-columns: minmax(0,1fr); gap: 12px; }
+    .ai-data-panel, .ai-assistant-panel { min-width: 0; padding: 17px; border-radius: 17px; }
+    .ai-demo-metrics { gap: 8px; margin-bottom: 13px; }
+    .ai-demo-metric { padding: 11px; }
+    .ai-prompt-suggestions { gap: 7px; }
+    .ai-prompt-suggestions button { min-height: 40px; padding: 8px 10px; font-size: .72rem; }
+    .ai-ask-button { min-height: 48px; }
+    .ai-privacy-note { font-size: .72rem; }
+
+    #contact .row { display: flex; flex-direction: column; gap: 24px; }
+    .contact-left, .contact-right { width: 100%; flex-basis: 100%; margin: 0; padding: 0; }
+    .contact-left h1 { font-size: clamp(2rem, 9vw, 2.7rem); }
+    .contact-left .contact-intro { font-size: .96rem; line-height: 1.6; }
+    .contact-left .social-icons { justify-content: flex-start; margin: 18px 0; }
+    #contact .btn.btn2 { width: 100%; min-height: 48px; margin: 8px 0 0; }
+    .contact-right form { max-width: none; }
+    .contact-right form input,
+    .contact-right form textarea { min-height: 48px; margin-bottom: 14px; padding: 13px 14px; border-radius: 12px; font-size: 16px; }
+    .contact-right form textarea { min-height: 140px; }
+    .contact-right form label { margin-bottom: 6px; font-size: .88rem; }
+
+    #footer .container { padding-right: 18px; padding-left: 18px; }
+    #footer .footer-content { grid-template-columns: 1fr; gap: 25px; padding: 36px 0 26px; text-align: left; }
+    #footer .footer-social { justify-content: flex-start; }
+    #footer .footer-links { display: grid; gap: 4px; }
+    #footer .footer-bottom-content { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 420px) {
+    #header .header_content { padding-right: 17px; padding-left: 17px; }
+    #header .greeting { max-width: 280px; }
+    #header .cta-buttons { grid-template-columns: 1fr; }
+    #header .cta-buttons .btn-primary { grid-column: 1; }
+    #header .cta-buttons .btn-ai-demo { justify-self: center; }
+    .home-business-examples { grid-template-columns: 1fr 1fr; }
+    .about-page .tab-btn { font-size: .7rem; }
+    .ai-panel-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
