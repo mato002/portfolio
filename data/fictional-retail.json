@@ -1,0 +1,17 @@
+{
+  "business": "Harbor Market (fictional sample)",
+  "currency": "KES",
+  "period": {
+    "label": "Sample week",
+    "gross_sales": 173600,
+    "transactions": 358
+  },
+  "products": [
+    { "name": "Maize flour 2 kg", "units_sold": 32, "stock_on_hand": 18, "reorder_at": 24 },
+    { "name": "Cooking oil 1 L", "units_sold": 25, "stock_on_hand": 9, "reorder_at": 12 },
+    { "name": "Sugar 2 kg", "units_sold": 21, "stock_on_hand": 14, "reorder_at": 18 },
+    { "name": "Rice 5 kg", "units_sold": 19, "stock_on_hand": 7, "reorder_at": 10 },
+    { "name": "Tea 500 g", "units_sold": 16, "stock_on_hand": 31, "reorder_at": 15 },
+    { "name": "Dish soap 1 L", "units_sold": 13, "stock_on_hand": 26, "reorder_at": 8 }
+  ]
+}

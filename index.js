@@ -446,3 +446,96 @@ function toggleProjects(event) {
         projectsVisible = false;
     }
 }
+
+// Fictional-data AI Operations Copilot demo
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('aiDemoForm');
+    if (!form) return;
+
+    const endpoint = './api/ai-demo.php';
+    const status = document.getElementById('aiDemoStatus');
+    const questionField = document.getElementById('aiDemoQuestion');
+    const submitButton = document.getElementById('aiDemoSubmit');
+    const answerPanel = document.getElementById('aiDemoAnswer');
+    const answerText = document.getElementById('aiDemoAnswerText');
+
+    function setStatus(message, isError) {
+        status.textContent = message;
+        status.classList.toggle('is-error', Boolean(isError));
+    }
+
+    function formatKes(amount) {
+        return new Intl.NumberFormat('en-KE', {
+            style: 'currency',
+            currency: 'KES',
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+
+    fetch(endpoint, { headers: { 'Accept': 'application/json' } })
+        .then(function(response) {
+            if (!response.ok) throw new Error('Sample data could not be loaded.');
+            return response.json();
+        })
+        .then(function(data) {
+            document.getElementById('demoSales').textContent = formatKes(data.period.gross_sales);
+            document.getElementById('demoTransactions').textContent = new Intl.NumberFormat('en-KE').format(data.period.transactions);
+
+            const rows = document.getElementById('demoInventoryRows');
+            rows.replaceChildren();
+            data.products.forEach(function(product) {
+                const row = document.createElement('tr');
+                [product.name, product.units_sold, product.stock_on_hand, product.reorder_at].forEach(function(value) {
+                    const cell = document.createElement('td');
+                    cell.textContent = String(value);
+                    row.appendChild(cell);
+                });
+                rows.appendChild(row);
+            });
+            setStatus('Sample data loaded. Try a suggested question or write your own.', false);
+        })
+        .catch(function() {
+            setStatus('Could not load the sample data. Open the portfolio through PHP-enabled Apache.', true);
+            document.getElementById('demoInventoryRows').innerHTML = '<tr><td colspan="4">Sample data is unavailable.</td></tr>';
+        });
+
+    document.querySelectorAll('[data-ai-prompt]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            questionField.value = button.getAttribute('data-ai-prompt') || '';
+            questionField.focus();
+        });
+    });
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const question = questionField.value.trim();
+        if (!question) return;
+
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+        answerPanel.hidden = true;
+        setStatus('Thinking about the fictional sample data…', false);
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: question })
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || 'The assistant could not answer just now.');
+
+            answerText.textContent = result.answer;
+            answerPanel.hidden = false;
+            setStatus('Answer generated from the fictional sample dataset.', false);
+        } catch (error) {
+            setStatus(error.message || 'The assistant could not answer just now.', true);
+        } finally {
+            submitButton.disabled = false;
+            submitButton.removeAttribute('aria-busy');
+        }
+    });
+});
