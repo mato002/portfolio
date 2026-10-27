@@ -1,17 +1,15 @@
-var tabLinks = document.getElementsByClassName("tab-links");
-var tabContents = document.getElementsByClassName("tab-contents");
+function openTab(tabName, button){
+    document.querySelectorAll('.tab-btn').forEach(function(tabButton) {
+        const isActive = tabButton === button;
+        tabButton.classList.toggle('active', isActive);
+        tabButton.setAttribute('aria-selected', String(isActive));
+    });
 
-function openTab(tabName){
-for(tabLink of tabLinks){
-tabLink.classList.remove("active-link");
-}
-
-    for(tabContent of tabContents){
-    tabContent.classList.remove("active-tab");
-    }
-
-    event.target.classList.add("active-link");
- document.getElementById(tabName).classList.add("active-tab");
+    document.querySelectorAll('.tab-contents').forEach(function(tabContent) {
+        const isActive = tabContent.id === tabName;
+        tabContent.classList.toggle('active-tab', isActive);
+        tabContent.hidden = !isActive;
+    });
 }
 var sideMenu = document.getElementById("sideMenu");
 var menuToggle = document.querySelector('.menu-toggle');
@@ -61,6 +59,9 @@ function closeMenu(e){
 
 // Mobile menu navigation - COMPLETELY REWRITTEN FOR RELIABILITY
 document.addEventListener('DOMContentLoaded', function() {
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
+
     // Wait for everything to load
     setTimeout(function() {
         // Handle all navigation links (both desktop and mobile)

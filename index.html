@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathias Odhiambo - UX/UI Designer & Full-Stack Developer | Portfolio</title>
+    <meta name="description" content="Mathias Odhiambo is a Nairobi-based full-stack software engineer with a product design background, targeting UK and international roles involving AI API integrations.">
+    <meta name="theme-color" content="#6941ff">
+    <title>Mathias Odhiambo — Designer & Developer</title>
     <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="./index.css">
@@ -28,7 +30,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="menu-close-wrapper">
                     <button class="menu-close" aria-label="Close navigation menu">
@@ -46,18 +47,15 @@
             <div class="header-social-links">
                 <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/mato002" target="_blank" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                <a href="https://twitter.com/yourusername" target="_blank" title="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/yourusername" target="_blank" title="Facebook Profile"><i class="fa-brands fa-facebook"></i></a>
             </div>
             
             <div class="header_content">
             <div class="header_text">
                     <div class="intro-text">
-                        <span class="greeting">Hello, I'm</span>
+                        <span class="greeting">NAIROBI, KENYA · OPEN TO UK & INTERNATIONAL SOFTWARE / AI ROLES</span>
                         <h1 class="name">Mathias <span class="highlight">Odhiambo</span></h1>
                         <div class="title-container">
-                            <h2 class="job-title">UX/UI Designer & Full-Stack Developer</h2>
+                            <h2 class="job-title">Full-stack software engineer with a product design background.</h2>
                             <div class="title-underline"></div>
                         </div>
                         <div class="technologies">
@@ -77,10 +75,10 @@
                             <span class="tech-separator">|</span>
                             <span class="tech-item">API</span>
                         </div>
-                        <p class="description">Passionate about creating exceptional digital experiences through innovative design and robust development solutions. Based in Nairobi, Kenya.</p>
+                        <p class="description">I build dependable business software and intuitive product experiences. My next focus is applying that foundation to practical products using AI APIs.</p>
                         <div class="cta-buttons">
                             <a href="#portfolio" class="btn-primary">View My Work</a>
-                            <a href="#contact" class="btn-secondary">Get In Touch</a>
+                            <a href="#contact" class="btn-secondary">Discuss a project</a>
                         </div>
                     </div>
                 </div>
@@ -107,8 +105,8 @@
                         <img src="images/mato.jpeg" alt="Mathias Odhiambo" class="about-image">
                         <div class="image-overlay">
                             <div class="overlay-content">
-                                <h3>5+ Years Experience</h3>
-                                <p>Full-Stack Development</p>
+                        <h3>Design-minded engineering</h3>
+                                <p>Web · Product · UI</p>
                             </div>
                         </div>
                     </div>
@@ -116,8 +114,9 @@
                 
                 <div class="about-text-section">
                     <div class="intro-text">
-                        <h2>Passionate Developer & Designer</h2>
-                        <p>I'm a dedicated UX/UI Designer and Full-Stack Developer with over 5 years of experience creating exceptional digital solutions. My passion lies in transforming complex problems into intuitive, beautiful designs that drive real business growth.</p>
+                        <h2>Software engineering with a product design perspective.</h2>
+                        <p>I build business software, from operational platforms to custom applications. My experience across design and development helps me turn complex workflows into clear, reliable tools.</p>
+                        <p class="current-focus"><strong>Current focus</strong><br>Growing into AI API integration and building practical AI applications with my full-stack foundation.</p>
                         
                         <div class="highlight-points">
                             <div class="point">
@@ -136,15 +135,15 @@
                     </div>
                     
                     <div class="tab-navigation">
-                        <button class="tab-btn active" onclick="openTab('skills')">
+                        <button class="tab-btn active" type="button" role="tab" aria-selected="true" onclick="openTab('skills', this)">
                             <i class="fa-solid fa-code"></i>
                             Skills
                         </button>
-                        <button class="tab-btn" onclick="openTab('experience')">
+                        <button class="tab-btn" type="button" role="tab" aria-selected="false" onclick="openTab('experience', this)">
                             <i class="fa-solid fa-briefcase"></i>
                             Experience
                         </button>
-                        <button class="tab-btn" onclick="openTab('education')">
+                        <button class="tab-btn" type="button" role="tab" aria-selected="false" onclick="openTab('education', this)">
                             <i class="fa-solid fa-graduation-cap"></i>
                             Education
                         </button>
@@ -207,7 +206,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-contents" id="experience">
+                        <div class="tab-contents" id="experience" hidden>
                             <ul>
                                 <li><span>2023 - Present</span><br>Senior UX/UI Designer & Full-Stack Developer at Pradytec Solutions, Nairobi, Kenya</li>
                                 <li><span>2022 - 2023</span><br>UX/UI Designer & Developer at Tech Innovations Kenya, Nairobi, Kenya</li>
@@ -215,7 +214,7 @@
                             </ul>
                         </div>
                         
-                        <div class="tab-contents" id="education">
+                        <div class="tab-contents" id="education" hidden>
                              <ul>
                                 <li><span>2025</span><br>BSc Computer Science from Egerton University</li>
                                 <li><span>2023</span><br>Graphic Design Specialization from Coursera (CalArts)</li>
@@ -235,68 +234,62 @@
           <div class="container">
             <div class="services-header">
                 <h1 class="section-title">My Services</h1>
-                <p class="section-subtitle">What I can do for you</p>
+                <p class="section-subtitle">Ready-made systems and custom software built around how your business works.</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Creating responsive, modern websites that deliver exceptional user experiences and drive business growth through strategic design and development.</p>
+                    <div class="service-icon"><i class="fas fa-store"></i></div>
+                    <h3>Business Operations</h3>
+                    <p>Manage everyday sales, stock, properties, and business operations with software designed for your workflow.</p>
                     <ul class="service-features">
-                        <li>Responsive Design</li>
-                        <li>Performance Optimization</li>
-                        <li>SEO Friendly</li>
-                        <li>Cross-browser Compatible</li>
+                        <li>POS and receipts</li>
+                        <li>Inventory and suppliers</li>
+                        <li>Property and rent management</li>
+                        <li>ERP solutions</li>
                     </ul>
-                    <a href="#portfolio" class="service-btn">View Projects</a>
+                    <a href="#contact" class="service-btn">Discuss your needs</a>
                </div> 
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                <i class="fas fa-crop-alt"></i>
-                    </div>
-                    <h3>UX/UI Design</h3>
-                    <p>Designing intuitive user experiences through research, wireframing, and prototyping to create products that users love and businesses need.</p>
+                    <div class="service-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Finance, Schools & ISPs</h3>
+                    <p>Keep members, learners, customers, payments, and records organized in one system.</p>
                     <ul class="service-features">
-                        <li>User Research</li>
-                        <li>Wireframing & Prototyping</li>
-                        <li>Visual Design</li>
-                        <li>Usability Testing</li>
+                        <li>SACCO and loan management</li>
+                        <li>School administration</li>
+                        <li>Internet billing and subscriptions</li>
+                        <li>Payments and financial records</li>
                     </ul>
-                    <a href="#portfolio" class="service-btn">View Projects</a>
+                    <a href="#contact" class="service-btn">Discuss your needs</a>
                </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                <i class="fab fa-app-store"></i>
-                    </div>
-                    <h3>Mobile Development</h3>
-                    <p>Building cross-platform mobile applications that provide seamless experiences across iOS and Android devices using modern frameworks.</p>
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Websites, Apps & E-commerce</h3>
+                    <p>Launch a clear online presence or a tailored digital product for the way your customers work and shop.</p>
                     <ul class="service-features">
-                        <li>React Native</li>
-                        <li>Flutter Development</li>
-                        <li>Native iOS/Android</li>
-                        <li>App Store Optimization</li>
+                        <li>E-commerce and online ordering</li>
+                        <li>Custom websites</li>
+                        <li>Web and mobile applications</li>
+                        <li>Custom features and workflows</li>
                     </ul>
-                    <a href="#portfolio" class="service-btn">View Projects</a>
+                    <a href="#contact" class="service-btn">Discuss your needs</a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fab fa-laravel"></i>
+                        <i class="fas fa-plug"></i>
                     </div>
-                    <h3>Backend Development</h3>
-                    <p>Building robust, scalable backend systems using Laravel and modern PHP frameworks to power your applications and APIs.</p>
+                    <h3>Integrations</h3>
+                    <p>Connect the tools your business depends on and reduce repetitive work between systems.</p>
                     <ul class="service-features">
-                        <li>Laravel Framework</li>
-                        <li>RESTful APIs</li>
-                        <li>Database Design</li>
-                        <li>Cloud Integration</li>
+                        <li>M-Pesa and payment gateways</li>
+                        <li>Banks and external applications</li>
+                        <li>SMS and email services</li>
+                        <li>Third-party APIs</li>
                     </ul>
-                    <a href="#portfolio" class="service-btn">View Projects</a>
+                    <a href="#contact" class="service-btn">Discuss your needs</a>
                </div>
             </div>
           </div>
@@ -306,25 +299,20 @@
         <div class="container">
             <div class="section-header">
                 <h1 class="section-title">Featured Projects</h1>
-                <p class="section-subtitle">Enterprise solutions that drive business success</p>
+                        <p class="section-subtitle">Selected software systems, presented without client names or domains.</p>
+                <p class="project-note">Project images are illustrative stock photography from Pexels and Unsplash, not client interface screenshots.</p>
             </div>
             
             <!-- Featured Projects Grid -->
             <div class="projects-grid">
                 <div class="project-card featured">
                     <div class="project-image">
-                        <img src="images/work-1.png" alt="Pradytecai Platform">
-                        <div class="project-overlay">
-                            <div class="project-links-overlay">
-                                <a href="http://pradytecai.com/" target="_blank" class="project-btn"><i class="fa-solid fa-external-link"></i> Live Site</a>
-                                <a href="https://github.com/mato002" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> Code</a>
-                            </div>
-                        </div>
+                        <div class="project-preview project-preview-platform" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt=""><span>01 / BUSINESS PLATFORM</span><strong>Enterprise business software</strong></div>
                     </div>
                     <div class="project-info">
-                        <h3>Pradytecai - Enterprise Solutions</h3>
+                        <h3>Enterprise Business Platform</h3>
                         <p class="project-category">Enterprise Platform • Laravel • Full-Stack</p>
-                        <p class="project-description">Enterprise software solutions platform offering BulkSMS CRM, Prady Mfi microfinance management, and custom enterprise software solutions.</p>
+                        <p class="project-description">Business software platform bringing customer communications, microfinance operations, and tailored tools together for organizations.</p>
                         <div class="project-tech">
                             <span class="tech-badge">Laravel</span>
                             <span class="tech-badge">MySQL</span>
@@ -336,16 +324,10 @@
 
                 <div class="project-card featured">
                     <div class="project-image">
-                        <img src="images/work-2.png" alt="BulkSMS CRM">
-                        <div class="project-overlay">
-                            <div class="project-links-overlay">
-                                <a href="https://crm.pradytecai.com/" target="_blank" class="project-btn"><i class="fa-solid fa-external-link"></i> Live Site</a>
-                                <a href="https://github.com/mato002" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> Code</a>
-                            </div>
-                        </div>
+                        <div class="project-preview project-preview-messaging" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1753545975907-dcb51efdd0d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" alt=""><span>02 / CUSTOMER MESSAGING</span><strong>Multi-channel communications</strong></div>
                     </div>
                     <div class="project-info">
-                        <h3>BulkSMS CRM Platform</h3>
+                        <h3>Messaging & Customer Engagement Platform</h3>
                         <p class="project-category">Multi-Channel Messaging • Laravel • API Integration</p>
                         <p class="project-description">Enterprise messaging platform for SMS, WhatsApp, and Email with contact management, campaigns, analytics, and M-Pesa integration.</p>
                         <div class="project-tech">
@@ -354,25 +336,15 @@
                             <span class="tech-badge">M-Pesa</span>
                             <span class="tech-badge">Analytics</span>
                         </div>
-                        <div class="project-stats">
-                            <span><strong>99.9%</strong> Delivery Rate</span>
-                            <span><strong>3</strong> Channels</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="project-card featured">
                     <div class="project-image">
-                        <img src="images/work-1.png" alt="PCIP System">
-                        <div class="project-overlay">
-                            <div class="project-links-overlay">
-                                <a href="https://pcip.pradytecai.com/" target="_blank" class="project-btn"><i class="fa-solid fa-external-link"></i> Live Site</a>
-                                <a href="https://github.com/mato002" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> Code</a>
-                            </div>
-                        </div>
+                        <div class="project-preview project-preview-finance" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/8062355/pexels-photo-8062355.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt=""><span>03 / FINANCIAL SYSTEM</span><strong>Loan management software</strong></div>
                     </div>
                     <div class="project-info">
-                        <h3>PCIP - Loan Management System</h3>
+                        <h3>Loan Management Platform</h3>
                         <p class="project-category">Financial Systems • Laravel • Analytics</p>
                         <p class="project-description">Comprehensive microfinance management system with branch management, financial analytics, client lifecycle, and real-time reporting.</p>
                         <div class="project-tech">
@@ -381,113 +353,11 @@
                             <span class="tech-badge">Analytics</span>
                             <span class="tech-badge">Reporting</span>
                         </div>
-                        <div class="project-stats">
-                            <span><strong>3000+</strong> Active Clients</span>
-                            <span><strong>5</strong> Branches</span>
-                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/work-3.png" alt="Fortress Lenders">
-                        <div class="project-overlay">
-                            <div class="project-links-overlay">
-                                <a href="https://fortresslenders.com/" target="_blank" class="project-btn"><i class="fa-solid fa-external-link"></i> Live Site</a>
-                                <a href="https://github.com/mato002" target="_blank" class="project-btn"><i class="fa-brands fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Fortress Lenders Website</h3>
-                        <p class="project-category">Corporate Website • UI/UX Design</p>
-                        <p class="project-description">Professional microfinance company website with loan applications, product information, team profiles, and responsive design.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">HTML/CSS</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Responsive</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Compact Testimonials -->
-            <div class="testimonials-compact">
-                <h3 class="testimonials-title">What Clients Say</h3>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">
-                            <i class="fa-solid fa-quote-left"></i>
-                            <p>"BulkSMS CRM transformed our customer communication. Increased engagement by 300%."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>John Kamau</h4>
-                            <p>CEO, TechStart Kenya</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">
-                            <i class="fa-solid fa-quote-left"></i>
-                            <p>"PCIP streamlined our loan management. What took days now takes minutes."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>James Ndegwa</h4>
-                            <p>Executive Director, Fortress Lenders</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">
-                            <i class="fa-solid fa-quote-left"></i>
-                            <p>"Professional, responsive website that perfectly represents our brand."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Sarah Mwangi</h4>
-                            <p>Operations Manager, Fortress Lenders</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Certifications Section -->
-    <div id="certifications">
-        <div class="container">
-            <h1 class="sub-tittle">Certifications & Achievements</h1>
-            <div class="certifications-grid">
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fa-brands fa-laravel"></i>
-                    </div>
-                    <h3>Laravel Certified Developer</h3>
-                    <p>Laravel Framework Mastery</p>
-                    <span class="cert-date">2023</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fa-brands fa-google"></i>
-                    </div>
-                    <h3>Google UX Design Certificate</h3>
-                    <p>User Experience Design Specialization</p>
-                    <span class="cert-date">2022</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fa-brands fa-aws"></i>
-                    </div>
-                    <h3>AWS Cloud Practitioner</h3>
-                    <p>Cloud Computing Fundamentals</p>
-                    <span class="cert-date">2023</span>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">
-                        <i class="fa-brands fa-js"></i>
-                    </div>
-                    <h3>JavaScript Algorithms</h3>
-                    <p>FreeCodeCamp Certification</p>
-                    <span class="cert-date">2022</span>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -495,14 +365,12 @@
         <div class="container">
             <div class="row">
                 <div class="contact-left">
-                    <h1 class="sub-tittle">Contact Me</h1>
+                    <h1 class="sub-tittle">Let’s build something useful.</h1>
+                    <p class="contact-intro">Need a ready-made business system or a custom application? Tell me what your business needs and let’s talk through it.</p>
                     <p><i class="fa-regular fa-envelope"></i>matechodhis@gmail.com</p>
-                    <p><i class="fa-solid fa-phone-volume"></i> 0111369814</p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/mato002" target="_blank" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://twitter.com/yourusername" target="_blank" title="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                     <a href="images/my-cv.pdf" class="btn btn2" id="cv-download-btn" download="Mathias_Odhiambo_CV.pdf">Download CV</a>
 
@@ -513,7 +381,7 @@
                         <input type="text"  name="Name" placeholder="Your Name" required>
                         <input type="email"  name="Email" placeholder="Your Email" required>
                         <textarea name="Message"  rows="6"  placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                        <button type="submit" class="btn btn2">Send message</button>
                     </form>
                     <span class="msg"></span>
 
@@ -544,7 +412,7 @@
                         <h3>Mathias Odhiambo</h3>
                     </div>
                     <p class="footer-description">
-                        Passionate UX/UI Designer and Full-Stack Developer creating exceptional digital experiences that drive business growth.
+                        Full-stack software engineering with a product design background, now moving toward practical AI API integrations.
                     </p>
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" class="social-link" target="_blank" title="LinkedIn Profile">
@@ -552,12 +420,6 @@
                         </a>
                         <a href="https://github.com/mato002" class="social-link" target="_blank" title="GitHub Profile">
                             <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://twitter.com/yourusername" class="social-link" target="_blank" title="Twitter Profile">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yourusername" class="social-link" target="_blank" title="Instagram Profile">
-                            <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -576,10 +438,10 @@
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">UX/UI Design</a></li>
-                        <li><a href="#services">Mobile Development</a></li>
-                        <li><a href="#services">Backend Development</a></li>
+                        <li><a href="#services">Business systems</a></li>
+                        <li><a href="#services">Finance, schools & ISPs</a></li>
+                        <li><a href="#services">Websites, apps & e-commerce</a></li>
+                        <li><a href="#services">System integrations</a></li>
                     </ul>
                 </div>
                 
@@ -592,7 +454,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-phone"></i>
-                            <span>+254 111 296 234</span>
+                            <a href="mailto:matechodhis@gmail.com">matechodhis@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
@@ -605,7 +467,7 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p class="copyright">
-                        &copy; 2024 Mathias Odhiambo. All rights reserved.
+                        &copy; <span id="current-year">2026</span> Mathias Odhiambo. All rights reserved.
                     </p>
                     <p class="made-with">
                         Made with <i class="fa-solid fa-heart"></i> by Mathias
@@ -622,8 +484,4 @@
 
 <script src="./index.js"></script>
 </body>
-</html> 
-
-
-
-   
+</html>
