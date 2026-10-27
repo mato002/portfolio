@@ -1,5 +1,7 @@
 /* Separate page layout */
-nav#mainNav, nav#mainNav.nav-hidden, nav#mainNav.nav-visible {
+body:not(:has(#header)) nav#mainNav,
+body:not(:has(#header)) nav#mainNav.nav-hidden,
+body:not(:has(#header)) nav#mainNav.nav-visible {
     opacity: 1;
     transform: none;
     pointer-events: auto;
@@ -20,7 +22,8 @@ body:not(:has(#header)) > #portfolio { background: var(--paper); }
 body:not(:has(#header)) > #ai-demo { background: #e9eef0; }
 body:not(:has(#header)) > #contact { background: var(--ink); }
 body:not(:has(#header)) > #footer { margin-top: 0; }
-.back-to-top, .scroll-progress { display: none !important; }
+body:not(:has(#header)) .back-to-top,
+body:not(:has(#header)) .scroll-progress { display: none !important; }
 @media (max-width: 768px) {
     body:not(:has(#header)) { padding-top: 112px; }
     body:not(:has(#header)) > #about,
