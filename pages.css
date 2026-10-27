@@ -17,9 +17,9 @@ body:not(:has(#header)) > #contact {
     padding-bottom: 72px;
 }
 body:not(:has(#header)) > #about { background: var(--paper); }
-body:not(:has(#header)) > #services { background: #e9eef0; }
+body:not(:has(#header)) > #services { background: #eaf0ec; }
 body:not(:has(#header)) > #portfolio { background: var(--paper); }
-body:not(:has(#header)) > #ai-demo { background: #e9eef0; }
+body:not(:has(#header)) > #ai-demo { background: #eaf0ec; }
 body:not(:has(#header)) > #contact { background: var(--ink); }
 body:not(:has(#header)) > #footer { margin-top: 0; }
 body:not(:has(#header)) .back-to-top,
