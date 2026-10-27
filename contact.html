@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mathias Odhiambo is a Nairobi-based full-stack software engineer with a product design background, targeting UK and international roles involving AI API integrations.">
+    <meta name="theme-color" content="#6941ff">
+    <title>Contact — Mathias Odhiambo</title>
+    <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./pages.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Navigation Bar - Appears on scroll -->
+    <nav id="mainNav" class="nav-hidden">
+        <div class="container">
+            <img src="images/matechlogo.png"  class="logo" alt="Mathias Odhiambo Logo">
+            <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+                <span class="menu-text">Menu</span>
+            </button>
+            <ul id="sideMenu" role="navigation" aria-label="Main navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ai-demo.html">AI Demo</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="menu-close-wrapper">
+                    <button class="menu-close" aria-label="Close navigation menu">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                        <span class="close-text">Close</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-tittle">Let’s build something useful.</h1>
+                    <p class="contact-intro">Need a ready-made business system or a custom application? Tell me what your business needs and let’s talk through it.</p>
+                    <p><i class="fa-regular fa-envelope"></i>matechodhis@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/mato002" target="_blank" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" class="btn btn2" id="cv-download-btn" download="Mathias_Odhiambo_CV.pdf">Download CV</a>
+
+                    
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text"  name="Name" placeholder="Your Name" required>
+                        <input type="email"  name="Email" placeholder="Your Email" required>
+                        <textarea name="Message"  rows="6"  placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2">Send message</button>
+                    </form>
+                    <span class="msg"></span>
+
+                    <!-- Alternative contact method -->
+                    <div class="alternative-contact">
+                        <p style="margin-top: 20px; color: #ababab; font-size: 14px;">
+                            Or send me an email directly: 
+                            <a href="mailto:matechodhis@gmail.com?subject=Portfolio Contact" style="color: #ff004f; text-decoration: none;">
+                                matechodhis@gmail.com
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+                </div>
+
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- Professional Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/matechlogo.png" alt="Mathias Odhiambo" class="footer-logo-img">
+                        <h3>Mathias Odhiambo</h3>
+                    </div>
+                    <p class="footer-description">
+                        Full-stack software engineering with a product design background, now moving toward practical AI API integrations.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" class="social-link" target="_blank" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/mato002" class="social-link" target="_blank" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="ai-demo.html">AI demo</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Business systems</a></li>
+                        <li><a href="services.html">Finance, schools & ISPs</a></li>
+                        <li><a href="services.html">Websites, apps & e-commerce</a></li>
+                        <li><a href="services.html">System integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>matechodhis@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="mailto:matechodhis@gmail.com">matechodhis@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; <span id="current-year">2026</span> Mathias Odhiambo. All rights reserved.
+                    </p>
+                    <p class="made-with">
+                        Made with <i class="fa-solid fa-heart"></i> by Mathias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>

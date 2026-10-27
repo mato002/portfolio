@@ -1,0 +1,35 @@
+/* Separate page layout */
+nav#mainNav, nav#mainNav.nav-hidden, nav#mainNav.nav-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+body:not(:has(#header)) { padding-top: 138px; }
+body:not(:has(#header)) > #about,
+body:not(:has(#header)) > #services,
+body:not(:has(#header)) > #portfolio,
+body:not(:has(#header)) > #ai-demo,
+body:not(:has(#header)) > #contact {
+    min-height: calc(100vh - 138px);
+    padding-top: 58px;
+    padding-bottom: 72px;
+}
+body:not(:has(#header)) > #about { background: var(--paper); }
+body:not(:has(#header)) > #services { background: #e9eef0; }
+body:not(:has(#header)) > #portfolio { background: var(--paper); }
+body:not(:has(#header)) > #ai-demo { background: #e9eef0; }
+body:not(:has(#header)) > #contact { background: var(--ink); }
+body:not(:has(#header)) > #footer { margin-top: 0; }
+.back-to-top, .scroll-progress { display: none !important; }
+@media (max-width: 768px) {
+    body:not(:has(#header)) { padding-top: 112px; }
+    body:not(:has(#header)) > #about,
+    body:not(:has(#header)) > #services,
+    body:not(:has(#header)) > #portfolio,
+    body:not(:has(#header)) > #ai-demo,
+    body:not(:has(#header)) > #contact {
+        min-height: calc(100svh - 112px);
+        padding-top: 38px;
+        padding-bottom: 50px;
+    }
+}

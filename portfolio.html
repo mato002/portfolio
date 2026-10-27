@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mathias Odhiambo is a Nairobi-based full-stack software engineer with a product design background, targeting UK and international roles involving AI API integrations.">
+    <meta name="theme-color" content="#6941ff">
+    <title>Portfolio — Mathias Odhiambo</title>
+    <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./pages.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Navigation Bar - Appears on scroll -->
+    <nav id="mainNav" class="nav-hidden">
+        <div class="container">
+            <img src="images/matechlogo.png"  class="logo" alt="Mathias Odhiambo Logo">
+            <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+                <span class="menu-text">Menu</span>
+            </button>
+            <ul id="sideMenu" role="navigation" aria-label="Main navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ai-demo.html">AI Demo</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="menu-close-wrapper">
+                    <button class="menu-close" aria-label="Close navigation menu">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                        <span class="close-text">Close</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Featured Projects</h1>
+                        <p class="section-subtitle">Selected software systems, presented without client names or domains.</p>
+                <p class="project-note">Project images are illustrative stock photography from Pexels and Unsplash, not client interface screenshots.</p>
+            </div>
+            
+            <!-- Featured Projects Grid -->
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-preview project-preview-platform" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt=""><span>01 / BUSINESS PLATFORM</span><strong>Enterprise business software</strong></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Enterprise Business Platform</h3>
+                        <p class="project-category">Enterprise Platform • Laravel • Full-Stack</p>
+                        <p class="project-description">Business software platform bringing customer communications, microfinance operations, and tailored tools together for organizations.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">API</span>
+                            <span class="tech-badge">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-preview project-preview-messaging" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1753545975907-dcb51efdd0d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" alt=""><span>02 / CUSTOMER MESSAGING</span><strong>Multi-channel communications</strong></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Messaging & Customer Engagement Platform</h3>
+                        <p class="project-category">Multi-Channel Messaging • Laravel • API Integration</p>
+                        <p class="project-description">Enterprise messaging platform for SMS, WhatsApp, and Email with contact management, campaigns, analytics, and M-Pesa integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">API</span>
+                            <span class="tech-badge">M-Pesa</span>
+                            <span class="tech-badge">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-preview project-preview-finance" aria-hidden="true"><img loading="lazy" decoding="async" src="https://images.pexels.com/photos/8062355/pexels-photo-8062355.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt=""><span>03 / FINANCIAL SYSTEM</span><strong>Loan management software</strong></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Loan Management Platform</h3>
+                        <p class="project-category">Financial Systems • Laravel • Analytics</p>
+                        <p class="project-description">Comprehensive microfinance management system with branch management, financial analytics, client lifecycle, and real-time reporting.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Analytics</span>
+                            <span class="tech-badge">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Professional Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/matechlogo.png" alt="Mathias Odhiambo" class="footer-logo-img">
+                        <h3>Mathias Odhiambo</h3>
+                    </div>
+                    <p class="footer-description">
+                        Full-stack software engineering with a product design background, now moving toward practical AI API integrations.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" class="social-link" target="_blank" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/mato002" class="social-link" target="_blank" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="ai-demo.html">AI demo</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Business systems</a></li>
+                        <li><a href="services.html">Finance, schools & ISPs</a></li>
+                        <li><a href="services.html">Websites, apps & e-commerce</a></li>
+                        <li><a href="services.html">System integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>matechodhis@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="mailto:matechodhis@gmail.com">matechodhis@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; <span id="current-year">2026</span> Mathias Odhiambo. All rights reserved.
+                    </p>
+                    <p class="made-with">
+                        Made with <i class="fa-solid fa-heart"></i> by Mathias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>

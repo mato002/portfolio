@@ -62,54 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = document.getElementById('current-year');
     if (currentYear) currentYear.textContent = new Date().getFullYear();
 
-    // Wait for everything to load
-    setTimeout(function() {
-        // Handle all navigation links (both desktop and mobile)
-        const mobileNavLinks = document.querySelectorAll('#sideMenu a:not(.menu-close)');
-        
-        mobileNavLinks.forEach(function(link) {
-            // Remove any existing listeners
-            const newLink = link.cloneNode(true);
-            link.parentNode.replaceChild(newLink, link);
-            
-            // Add click handler
-            newLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const href = this.getAttribute('href');
-                console.log('Navigating to:', href);
-                
-                if (href && href.startsWith('#')) {
-                    navigateToSection(href);
-                }
-            }, true);
-            
-            // Touch support for better mobile response
-            newLink.addEventListener('touchend', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.click();
-            }, {passive: false});
-        });
-        
-        // Close button handler
-        const closeBtn = document.querySelector('.menu-close');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                closeMenu();
-            }, true);
-        }
-        
-        // ESC key to close
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isMenuOpen) {
-                closeMenu();
-            }
-        });
-    }, 100);
+    const closeBtn = document.querySelector('.menu-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('#sideMenu a').forEach(function(link) {
+        link.addEventListener('click', function() { closeMenu(); });
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isMenuOpen) closeMenu();
+    });
 });
 
 

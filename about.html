@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mathias Odhiambo is a Nairobi-based full-stack software engineer with a product design background, targeting UK and international roles involving AI API integrations.">
+    <meta name="theme-color" content="#6941ff">
+    <title>About — Mathias Odhiambo</title>
+    <script src="https://kit.fontawesome.com/9e357f2cb3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./pages.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Navigation Bar - Appears on scroll -->
+    <nav id="mainNav" class="nav-hidden">
+        <div class="container">
+            <img src="images/matechlogo.png"  class="logo" alt="Mathias Odhiambo Logo">
+            <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+                <span class="menu-text">Menu</span>
+            </button>
+            <ul id="sideMenu" role="navigation" aria-label="Main navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="ai-demo.html">AI Demo</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="menu-close-wrapper">
+                    <button class="menu-close" aria-label="Close navigation menu">
+                        <i class="fa-regular fa-rectangle-xmark"></i>
+                        <span class="close-text">Close</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="about">
+        <div class="container">
+            <div class="about-header">
+                <h1 class="section-title">About Me</h1>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image-section">
+                    <div class="image-wrapper">
+                        <img src="images/mato.jpeg" alt="Mathias Odhiambo" class="about-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                        <h3>Design-minded engineering</h3>
+                                <p>Web · Product · UI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text-section">
+                    <div class="intro-text">
+                        <h2>Software engineering with a product design perspective.</h2>
+                        <p>I build business software, from operational platforms to custom applications. My experience across design and development helps me turn complex workflows into clear, reliable tools.</p>
+                        <p class="current-focus"><strong>Current focus</strong><br>Growing into AI API integration and building practical AI applications with my full-stack foundation.</p>
+                        
+                        <div class="highlight-points">
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>User-centered design approach</span>
+                            </div>
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Modern technology stack expertise</span>
+                            </div>
+                            <div class="point">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Cross-platform development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" type="button" role="tab" aria-selected="true" onclick="openTab('skills', this)">
+                            <i class="fa-solid fa-code"></i>
+                            Skills
+                        </button>
+                        <button class="tab-btn" type="button" role="tab" aria-selected="false" onclick="openTab('experience', this)">
+                            <i class="fa-solid fa-briefcase"></i>
+                            Experience
+                        </button>
+                        <button class="tab-btn" type="button" role="tab" aria-selected="false" onclick="openTab('education', this)">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Education
+                        </button>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <div class="skills-container">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>UI/UX Design</span>
+                                        <span>95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Web Development</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Mobile Development</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>JavaScript</span>
+                                        <span>88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Laravel/PHP</span>
+                                        <span>92%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Database Design</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-contents" id="experience" hidden>
+                            <ul>
+                                <li><span>2023 - Present</span><br>Senior UX/UI Designer & Full-Stack Developer at Pradytec Solutions, Nairobi, Kenya</li>
+                                <li><span>2022 - 2023</span><br>UX/UI Designer & Developer at Tech Innovations Kenya, Nairobi, Kenya</li>
+                                <li><span>2021 - 2022</span><br>Junior Designer & Developer at Digital Ventures Kenya, Nairobi, Kenya</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-contents" id="education" hidden>
+                             <ul>
+                                <li><span>2025</span><br>BSc Computer Science from Egerton University</li>
+                                <li><span>2023</span><br>Graphic Design Specialization from Coursera (CalArts)</li>
+                                <li><span>2022</span><br>UX/UI Design Certification from Google</li>
+                             </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------services------ -->
+
+    <!-- Professional Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/matechlogo.png" alt="Mathias Odhiambo" class="footer-logo-img">
+                        <h3>Mathias Odhiambo</h3>
+                    </div>
+                    <p class="footer-description">
+                        Full-stack software engineering with a product design background, now moving toward practical AI API integrations.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/mathias-odhiambo-27734b226/" class="social-link" target="_blank" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/mato002" class="social-link" target="_blank" title="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="ai-demo.html">AI demo</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Business systems</a></li>
+                        <li><a href="services.html">Finance, schools & ISPs</a></li>
+                        <li><a href="services.html">Websites, apps & e-commerce</a></li>
+                        <li><a href="services.html">System integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>matechodhis@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="mailto:matechodhis@gmail.com">matechodhis@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nairobi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; <span id="current-year">2026</span> Mathias Odhiambo. All rights reserved.
+                    </p>
+                    <p class="made-with">
+                        Made with <i class="fa-solid fa-heart"></i> by Mathias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
