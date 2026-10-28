@@ -62,6 +62,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = document.getElementById('current-year');
     if (currentYear) currentYear.textContent = new Date().getFullYear();
 
+    const footerAccordionQuery = window.matchMedia('(max-width: 768px)');
+    const syncFooterAccordions = function() {
+        document.querySelectorAll('.footer-accordion').forEach(function(section) {
+            section.open = !footerAccordionQuery.matches;
+        });
+    };
+    syncFooterAccordions();
+    if (footerAccordionQuery.addEventListener) {
+        footerAccordionQuery.addEventListener('change', syncFooterAccordions);
+    } else {
+        footerAccordionQuery.addListener(syncFooterAccordions);
+    }
+
     const closeBtn = document.querySelector('.menu-close');
     if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 

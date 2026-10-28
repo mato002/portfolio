@@ -353,3 +353,51 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
     .about-page .tab-btn { font-size: .7rem; }
     .ai-panel-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
+
+/* Footer navigation collapses into a compact phone grid. */
+#footer .footer-accordion > summary { position: relative; display: block; color: white; font-size: 1.1rem; font-weight: 700; cursor: pointer; list-style: none; }
+#footer .footer-accordion > summary::-webkit-details-marker { display: none; }
+#footer .footer-accordion > summary::marker { content: ""; }
+#footer .footer-accordion > summary::after { content: ""; position: absolute; bottom: -9px; left: 0; width: 40px; height: 2px; background: var(--lime); }
+
+@media (max-width: 768px) {
+    #footer .footer-content { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; margin-bottom: 18px; padding: 28px 0 20px; }
+    #footer .footer-content > .footer-section:first-child,
+    #footer .footer-content > .footer-section:last-child { grid-column: 1 / -1; }
+    #footer .footer-content > .footer-section:first-child { padding: 0 2px 8px; }
+    #footer .footer-logo { gap: 10px; margin-bottom: 12px; }
+    #footer .footer-logo-img { width: 48px; height: 48px; object-fit: contain; }
+    #footer .footer-logo h3 { font-size: 1rem; }
+    #footer .footer-description { max-width: 480px; margin: 0 0 12px; font-size: .84rem; line-height: 1.5; }
+    #footer .footer-social { gap: 8px; }
+    #footer .footer-social .social-link { width: 38px; height: 38px; }
+    #footer .footer-accordion { min-width: 0; align-self: start; padding: 0 11px; border: 1px solid rgba(255,255,255,.14); border-radius: 13px; background: rgba(255,255,255,.045); }
+    #footer .footer-accordion > summary { display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 0; font-size: .84rem; white-space: nowrap; }
+    #footer .footer-accordion > summary::after { position: static; display: grid; flex: 0 0 23px; width: 23px; height: 23px; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; background: transparent; color: var(--lime); font-size: 1rem; line-height: 1; }
+    #footer .footer-accordion:not([open]) > summary::after { content: "+"; }
+    #footer .footer-accordion[open] > summary::after { content: "−"; }
+    #footer .footer-accordion[open] > summary { margin-bottom: 6px; }
+    #footer .footer-accordion .footer-links { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2px 6px; padding: 0 0 10px; }
+    #footer .footer-accordion:nth-child(3) .footer-links { grid-template-columns: 1fr; }
+    #footer .footer-accordion .footer-links li { min-width: 0; margin: 0; }
+    #footer .footer-accordion .footer-links a { display: flex; align-items: center; min-height: 38px; font-size: .77rem; line-height: 1.25; overflow-wrap: anywhere; }
+    #footer .footer-content > .footer-section:last-child h4 { margin: 5px 0 12px; font-size: .96rem; }
+    #footer .footer-section:last-child h4::after { bottom: -6px; }
+    #footer .contact-info { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    #footer .contact-item { min-width: 0; align-items: flex-start; gap: 9px; font-size: .82rem; line-height: 1.4; overflow-wrap: anywhere; }
+    #footer .contact-item:first-child { grid-column: 1 / -1; }
+    #footer .contact-item i { flex: 0 0 16px; margin-top: 3px; }
+    #footer .contact-item a { overflow-wrap: anywhere; }
+    #footer .footer-bottom { padding-top: 15px; }
+    #footer .footer-bottom-content { align-items: flex-start; gap: 6px; }
+    #footer .copyright, #footer .made-with { font-size: .78rem; line-height: 1.5; }
+}
+
+@media (max-width: 360px) {
+    #footer .footer-content { gap: 10px; }
+    #footer .footer-accordion { padding: 0 9px; }
+    #footer .footer-accordion > summary { font-size: .78rem; }
+    #footer .footer-accordion > summary::after { flex-basis: 20px; width: 20px; height: 20px; }
+    #footer .contact-info { grid-template-columns: 1fr; }
+    #footer .contact-item:first-child { grid-column: auto; }
+}
