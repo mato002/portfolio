@@ -60,12 +60,15 @@
 
 <div class="service-explorer">
                 <div class="service-explorer-heading"><span>FIND YOUR WORKFLOW</span><p id="serviceResultText" aria-live="polite">Showing retail &amp; production systems</p></div>
-                <div class="service-filters" role="group" aria-label="Browse services by business need">
-                    <button type="button" class="service-filter" data-service-filter="all" aria-pressed="false">All systems <span>14</span></button>
-                    <button type="button" class="service-filter active" data-service-filter="commerce" aria-pressed="true">Retail &amp; production <span>4</span></button>
-                    <button type="button" class="service-filter" data-service-filter="people" aria-pressed="false">Finance &amp; people <span>4</span></button>
-                    <button type="button" class="service-filter" data-service-filter="operations" aria-pressed="false">Property &amp; networks <span>3</span></button>
-                    <button type="button" class="service-filter" data-service-filter="digital" aria-pressed="false">Platforms &amp; APIs <span>3</span></button>
+                <div class="service-filters">
+                    <label class="service-filter-label" for="serviceCategorySelect">Choose a business type</label>
+                    <select class="service-filter-select" id="serviceCategorySelect">
+                        <option value="all">All systems (14)</option>
+                        <option value="commerce" selected>Retail &amp; production (4)</option>
+                        <option value="people">Finance &amp; people (4)</option>
+                        <option value="operations">Property &amp; networks (3)</option>
+                        <option value="digital">Platforms &amp; APIs (3)</option>
+                    </select>
                 </div>
             </div>
 

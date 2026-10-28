@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const serviceCards = Array.from(document.querySelectorAll('[data-service-category]'));
     const serviceFilters = Array.from(document.querySelectorAll('[data-service-filter]'));
+    const serviceFilterSelect = document.getElementById('serviceCategorySelect');
     const serviceResultText = document.getElementById('serviceResultText');
     const serviceLabels = {
         all: 'Showing all business systems',
@@ -96,6 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', function() { filterServices(button.dataset.serviceFilter); });
         });
         filterServices(document.querySelector('[data-service-filter].active')?.dataset.serviceFilter || 'all');
+    }
+    if (serviceFilterSelect) {
+        serviceFilterSelect.addEventListener('change', function() {
+            filterServices(serviceFilterSelect.value);
+        });
+        filterServices(serviceFilterSelect.value || 'all');
     }
 
     const projectCards = Array.from(document.querySelectorAll('[data-project-category]'));
