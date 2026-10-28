@@ -1431,9 +1431,6 @@ nav#mainNav.nav-hidden,
 nav#mainNav.nav-visible {
     min-height: 112px;
     padding: 6px 0;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
     background-color: #10242b;
     background-image:
         linear-gradient(90deg, rgba(10, 25, 34, .90) 0%, rgba(10, 25, 34, .78) 52%, rgba(10, 25, 34, .60) 100%),
@@ -1453,6 +1450,22 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
     body:not(:has(#header)) > #services,
     body:not(:has(#header)) > #ai-demo,
     body:not(:has(#header)) > #contact { min-height: calc(100vh - 112px); }
+    body:not(:has(#header)) nav#mainNav.nav-hidden,
+    body:not(:has(#header)) nav#mainNav.nav-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+    body:has(#header) nav#mainNav.nav-hidden {
+        opacity: 0;
+        transform: translateY(-100%);
+        pointer-events: none;
+    }
+    body:has(#header) nav#mainNav.nav-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
     nav#mainNav .logo { width: 100px; height: 100px; object-fit: contain; }
     nav#mainNav ul { background: transparent !important; }
     nav#mainNav ul li a:not(.menu-close) { color: #f8fafc !important; }
