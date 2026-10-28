@@ -1498,3 +1498,75 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
 @media (prefers-reduced-motion: reduce) {
     .portfolio-page #projectTrack { perspective: 1450px; }
 }
+
+/* Services page: compact, touch-first layout for small viewports. */
+@media (max-width: 768px) {
+    .services-page > .container {
+        width: 100%;
+        max-width: none;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    .services-page .services-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        margin-bottom: 22px;
+    }
+    .services-page .services-intro .section-title {
+        max-width: 14ch;
+        font-size: clamp(1.9rem, 8.2vw, 2.5rem);
+        line-height: 1.08;
+        text-wrap: balance;
+    }
+    .services-page .services-intro .section-subtitle {
+        max-width: 55ch;
+        font-size: .94rem;
+        line-height: 1.55;
+    }
+    .services-page .services-header .service-spotlight {
+        gap: 14px;
+        padding: 18px !important;
+        border-radius: 16px;
+    }
+    .services-page .services-header .service-spotlight h2 { font-size: 1.25rem; line-height: 1.2; }
+    .service-explorer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+        gap: 10px;
+        margin: 16px 0 10px;
+    }
+    .service-explorer-heading,
+    .service-filters { width: 100%; min-width: 0; }
+    .service-filters { display: flex; flex-direction: column; align-items: stretch; gap: 7px; }
+    .service-filter-select { width: 100%; min-width: 0; min-height: 48px; }
+    .service-explorer .track-actions { justify-content: flex-end; }
+    .service-explorer .track-actions button { width: 44px; height: 44px; }
+    .services-page .services-grid#serviceTrack {
+        display: flex;
+        width: 100%;
+        gap: 12px;
+        padding: 4px 4px 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-padding-inline: 4px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+    }
+    .services-page #serviceTrack > .service-card {
+        flex: 0 0 85%;
+        width: 85%;
+        min-width: 85%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
+@media (max-width: 360px) {
+    .services-page .services-intro .section-title { font-size: 1.85rem; }
+    .services-page .services-header { gap: 18px; }
+    .services-page .services-header .service-spotlight { padding: 16px !important; }
+}
