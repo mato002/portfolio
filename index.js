@@ -427,28 +427,36 @@ function showMessage(text, type) {
     }
 }
 
-// Scroll Progress Bar and Navigation Visibility
+// Scroll progress and auto-hiding navigation.
+let lastNavigationScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+const mainNavigation = document.getElementById('mainNav');
+
+function setNavigationVisibility(visible) {
+    if (!mainNavigation) return;
+    mainNavigation.classList.toggle('nav-visible', visible);
+    mainNavigation.classList.toggle('nav-hidden', !visible);
+}
+
+// Keep navigation available on initial load; hide it only as the visitor moves down.
+setNavigationVisibility(true);
+
 window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-    document.querySelector('.scroll-progress-bar').style.width = scrollPercent + '%';
-    
-    // Show/hide navigation based on scroll position
-    const mainNav = document.getElementById('mainNav');
-    const header = document.getElementById('header');
-    const headerHeight = header ? header.offsetHeight : 600;
-    
-    if (mainNav) {
-        if (scrollTop > headerHeight * 0.7) {
-            mainNav.classList.remove('nav-hidden');
-            mainNav.classList.add('nav-visible');
-        } else {
-            mainNav.classList.remove('nav-visible');
-            mainNav.classList.add('nav-hidden');
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    if (progressBar) progressBar.style.width = (scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0) + '%';
+
+    if (mainNavigation) {
+        const scrollDelta = scrollTop - lastNavigationScrollTop;
+        if (isMenuOpen || mainNavigation.contains(document.activeElement) || scrollTop < 80) {
+            setNavigationVisibility(true);
+        } else if (Math.abs(scrollDelta) >= 6) {
+            setNavigationVisibility(scrollDelta < 0);
         }
     }
-});
+
+    lastNavigationScrollTop = scrollTop;
+}, { passive: true });
 
 // Smooth scrolling for navigation links (desktop only - mobile menu handled separately)
 document.addEventListener('DOMContentLoaded', function() {

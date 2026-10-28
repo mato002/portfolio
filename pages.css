@@ -938,13 +938,6 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
     nav#mainNav ul li a:not(.menu-close):active { color: #ffa2b6 !important; background: rgba(214,83,109,.16) !important; }
 }
 
-/* Keep the primary navigation visible, including pages that still carry the legacy nav-hidden class. */
-nav#mainNav.nav-hidden,
-nav#mainNav.nav-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
-}
 @media (min-width: 769px) {
     nav#mainNav ul { background: transparent !important; }
     nav#mainNav ul li a:not(.menu-close) { color: #f8fafc !important; }
@@ -1368,6 +1361,22 @@ body:not(:has(#header)) > #portfolio.portfolio-page { padding-top: 32px; padding
     #footer { display: none !important; }
 }
 
+/* Let the navigation tuck away while reading and return on upward scroll. */
+nav#mainNav.nav-hidden {
+    opacity: 0 !important;
+    transform: translateY(-110%) !important;
+    visibility: hidden;
+    pointer-events: none !important;
+    transition: transform .28s ease, opacity .2s ease, visibility 0s linear .28s;
+}
+nav#mainNav.nav-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible;
+    pointer-events: auto !important;
+    transition: transform .28s ease, opacity .2s ease, visibility 0s;
+}
+
 /* Click or keyboard-open a project in an image-style focused detail dialog. */
 .portfolio-page #projectTrack > .project-card { cursor: zoom-in; }
 .portfolio-page #projectTrack > .project-card:focus-visible { outline: 3px solid var(--brand-blue); outline-offset: 3px; }
@@ -1453,22 +1462,6 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
     body:not(:has(#header)) > #services,
     body:not(:has(#header)) > #ai-demo,
     body:not(:has(#header)) > #contact { min-height: calc(100vh - 112px); }
-    body:not(:has(#header)) nav#mainNav.nav-hidden,
-    body:not(:has(#header)) nav#mainNav.nav-visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        pointer-events: auto !important;
-    }
-    body:has(#header) nav#mainNav.nav-hidden {
-        opacity: 0 !important;
-        transform: translateY(-100%) !important;
-        pointer-events: none !important;
-    }
-    body:has(#header) nav#mainNav.nav-visible {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
     nav#mainNav .logo { width: 100px; height: 100px; object-fit: contain; }
     nav#mainNav ul { background: transparent !important; }
     nav#mainNav ul li a:not(.menu-close) { color: #f8fafc !important; }
