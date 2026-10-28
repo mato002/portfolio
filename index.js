@@ -198,6 +198,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const projectTrack = document.getElementById('projectTrack');
+    if (projectTrack) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let sphereFrame = 0;
+        function updateProjectSphere() {
+            sphereFrame = 0;
+            if (reducedMotion.matches) {
+                projectTrack.querySelectorAll(':scope > .project-card').forEach(function(card) {
+                    card.style.removeProperty('--sphere-rotate');
+                    card.style.removeProperty('--sphere-depth');
+                    card.style.removeProperty('--sphere-lift');
+                    card.style.removeProperty('--sphere-scale');
+                });
+                return;
+            }
+
+            const trackBounds = projectTrack.getBoundingClientRect();
+            const centerX = trackBounds.left + trackBounds.width / 2;
+            const radius = Math.max(trackBounds.width / 2, 1);
+            projectTrack.querySelectorAll(':scope > .project-card:not([hidden])').forEach(function(card) {
+                const cardBounds = card.getBoundingClientRect();
+                const distance = Math.max(-1, Math.min(1, (cardBounds.left + cardBounds.width / 2 - centerX) / radius));
+                const edge = Math.abs(distance);
+                card.style.setProperty('--sphere-rotate', (-distance * 19).toFixed(2) + 'deg');
+                card.style.setProperty('--sphere-depth', (-edge * edge * 82).toFixed(2) + 'px');
+                card.style.setProperty('--sphere-lift', (edge * edge * 10).toFixed(2) + 'px');
+                card.style.setProperty('--sphere-scale', (1.035 - edge * .075).toFixed(3));
+            });
+        }
+        function scheduleProjectSphereUpdate() {
+            if (!sphereFrame) sphereFrame = window.requestAnimationFrame(updateProjectSphere);
+        }
+        projectTrack.addEventListener('scroll', scheduleProjectSphereUpdate, { passive: true });
+        window.addEventListener('resize', scheduleProjectSphereUpdate, { passive: true });
+        if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', scheduleProjectSphereUpdate);
+        else reducedMotion.addListener(scheduleProjectSphereUpdate);
+        scheduleProjectSphereUpdate();
+    }
+
     if (footerAccordionQuery.addEventListener) {
         footerAccordionQuery.addEventListener('change', syncFooterAccordions);
     } else {

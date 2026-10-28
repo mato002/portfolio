@@ -1481,3 +1481,21 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
     }
     nav#mainNav .container { min-height: 68px; }
 }
+
+/* A shallow 3D arc makes the horizontally browsed projects feel like a rotating sphere. */
+.portfolio-page #projectTrack {
+    perspective: 1250px;
+    perspective-origin: 50% 46%;
+    transform-style: preserve-3d;
+}
+.portfolio-page #projectTrack > .project-card {
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: translate3d(0, var(--sphere-lift, 0px), var(--sphere-depth, 0px))
+        rotateY(var(--sphere-rotate, 0deg)) scale(var(--sphere-scale, 1));
+}
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-page #projectTrack { perspective: none; }
+    .portfolio-page #projectTrack > .project-card { transform: none !important; }
+}
