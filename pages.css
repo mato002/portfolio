@@ -646,8 +646,8 @@ nav ul li a:not(.menu-close):active { color: #fff; background: rgba(24,36,58,.22
 }
 #header .greeting { color: #ffd274; }
 #header .highlight, #header .header_text h1 span { color: #ffd274; }
-#header .btn-primary { background: var(--brand-red); border-color: var(--brand-red); color: #fff; }
-#header .btn-primary:hover { background: #8f0025; border-color: #8f0025; }
+#header .btn-primary { background: #fff; border-color: #fff; color: var(--brand-red); }
+#header .btn-primary:hover { background: #fee9ef; border-color: #fee9ef; color: #8f0025; }
 #header .btn-secondary { background: var(--brand-blue); border-color: var(--brand-blue); color: #fff; }
 #header .btn-secondary:hover { background: #1a3478; border-color: #1a3478; color: #fff; }
 #header .btn-ai-demo { color: #ffd274; }
@@ -662,6 +662,8 @@ nav ul li a:not(.menu-close):active { color: #fff; background: rgba(24,36,58,.22
 .services-page .service-card:hover .service-icon,
 .service-card:hover .service-icon { background: #fee9ef; color: var(--brand-red); }
 .service-btn, .home-work-link, .project-case-details summary { color: var(--brand-red); }
+.service-filter.active, .project-filter.active { border-color: var(--brand-red); background: var(--brand-red); }
+.service-filter.active span { color: var(--brand-red); }
 .project-preview::before { background: linear-gradient(115deg,rgba(18,31,57,.72),rgba(173,0,45,.12)); }
 .project-preview-platform { background: #ad002d; }
 .project-preview-messaging { background: #244696; }
@@ -673,6 +675,12 @@ nav ul li a:not(.menu-close):active { color: #fff; background: rgba(24,36,58,.22
 body:not(:has(#header)) > #portfolio.portfolio-page { background: radial-gradient(ellipse at 88% 4%,rgba(36,70,150,.08),transparent 34rem),var(--paper); }
 .about-page .intro-text p.current-focus { border-color: rgba(173,0,45,.14); border-left-color: var(--brand-red); background: linear-gradient(110deg,#fff1f4,#fff); }
 .about-page .point i { background: #fee9ef; color: var(--brand-red); }
+.stack-map-core { background: linear-gradient(145deg,#8f0025 0%,#ad002d 56%,#244696 100%); }
+.stack-map-index, .stack-map-core > i { color: #ffd274; }
+.stack-layer-index, .stack-map-footer > i { color: var(--brand-red); }
+.stack-layer small, .stack-layer > i { color: var(--brand-blue); }
+.stack-layer > i { background: #edf1fb; }
+.stack-map-footer { background: #f3f5fa; }
 #ai-demo .ai-ask-button { background: var(--brand-blue); }
 #ai-demo .ai-ask-button:hover { background: #1a3478; }
 #ai-demo .ai-demo-answer { border-left-color: var(--brand-red); background: #fff1f4; }
