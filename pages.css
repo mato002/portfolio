@@ -9,7 +9,6 @@ body:not(:has(#header)) nav#mainNav.nav-visible {
 body:not(:has(#header)) { padding-top: 138px; }
 body:not(:has(#header)) > #about,
 body:not(:has(#header)) > #services,
-body:not(:has(#header)) > #portfolio,
 body:not(:has(#header)) > #ai-demo,
 body:not(:has(#header)) > #contact {
     min-height: calc(100vh - 138px);
@@ -42,7 +41,6 @@ body:not(:has(#header)) .scroll-progress { display: none !important; }
     body:not(:has(#header)) { padding-top: 112px; }
     body:not(:has(#header)) > #about,
     body:not(:has(#header)) > #services,
-    body:not(:has(#header)) > #portfolio,
     body:not(:has(#header)) > #ai-demo,
     body:not(:has(#header)) > #contact {
         min-height: calc(100svh - 112px);
@@ -1032,7 +1030,6 @@ body:not(:has(#header)) > #contact { background: #f8f9fa; color: #111827; }
 
 /* Portfolio case studies: clean two-column cards with readable project covers. */
 body:not(:has(#header)) > #portfolio.portfolio-page {
-    min-height: 0;
     padding-bottom: 64px;
 }
 .portfolio-page .projects-grid {
