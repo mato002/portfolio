@@ -937,6 +937,20 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
     nav#mainNav ul li a:not(.menu-close):hover,
     nav#mainNav ul li a:not(.menu-close):active { color: #ffa2b6 !important; background: rgba(214,83,109,.16) !important; }
 }
+
+/* Keep the primary navigation visible, including pages that still carry the legacy nav-hidden class. */
+nav#mainNav.nav-hidden,
+nav#mainNav.nav-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+@media (min-width: 769px) {
+    nav#mainNav ul { background: transparent !important; }
+    nav#mainNav ul li a:not(.menu-close) { color: #f8fafc !important; }
+    nav#mainNav ul li a:not(.menu-close):hover,
+    nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; background: rgba(255,255,255,.1) !important; }
+}
 .services-page .service-filters { align-items: center; gap: 10px; }
 .service-filter-label { color: var(--muted); font-size: .78rem; font-weight: 700; }
 .service-filter-select { min-width: min(290px, 100%); min-height: 46px; padding: 0 42px 0 15px; border: 1px solid #e5e7eb; border-radius: 12px; appearance: auto; background: #fff; color: #111827; font: inherit; font-size: .86rem; font-weight: 700; cursor: pointer; pointer-events: auto; }
