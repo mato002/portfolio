@@ -109,6 +109,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const projectCards = Array.from(document.querySelectorAll('[data-project-category]'));
+    const projectModal = document.getElementById('projectModal');
+    const projectModalTitle = document.getElementById('projectModalTitle');
+    const projectModalContent = document.getElementById('projectModalContent');
+    const projectModalClose = projectModal && projectModal.querySelector('.project-modal-close');
+    let previouslyFocusedProject = null;
+
+    function openProjectModal(card) {
+        if (!projectModal || !projectModalContent) return;
+        const title = card.querySelector('.project-info h3');
+        const clone = card.cloneNode(true);
+        clone.removeAttribute('tabindex');
+        clone.removeAttribute('aria-haspopup');
+        clone.removeAttribute('aria-label');
+        clone.classList.add('project-modal-card');
+        clone.hidden = false;
+        const repeatedTitle = clone.querySelector('.project-info h3');
+        if (repeatedTitle) repeatedTitle.remove();
+        clone.querySelectorAll('.project-case-details').forEach(function(details) { details.open = true; });
+        projectModalTitle.textContent = title ? title.textContent.trim() : 'Project details';
+        projectModalContent.replaceChildren(clone);
+        previouslyFocusedProject = card;
+        projectModal.showModal();
+        if (projectModalClose) projectModalClose.focus();
+    }
+
+    projectCards.forEach(function(card) {
+        const title = card.querySelector('.project-info h3');
+        card.tabIndex = 0;
+        card.setAttribute('aria-haspopup', 'dialog');
+        card.setAttribute('aria-label', 'Open project: ' + (title ? title.textContent.trim() : 'Project details'));
+        card.addEventListener('click', function(event) {
+            if (event.target.closest('.project-case-details, a, button, input, select, textarea')) return;
+            openProjectModal(card);
+        });
+        card.addEventListener('keydown', function(event) {
+            if (event.target !== card || (event.key !== 'Enter' && event.key !== ' ')) return;
+            event.preventDefault();
+            openProjectModal(card);
+        });
+    });
+
+    if (projectModalClose) projectModalClose.addEventListener('click', function() { projectModal.close(); });
+    if (projectModal) {
+        projectModal.addEventListener('click', function(event) {
+            if (event.target === projectModal) projectModal.close();
+        });
+        projectModal.addEventListener('close', function() {
+            projectModalContent.replaceChildren();
+            if (previouslyFocusedProject && document.contains(previouslyFocusedProject)) previouslyFocusedProject.focus();
+            previouslyFocusedProject = null;
+        });
+    }
+
     const projectFilters = Array.from(document.querySelectorAll('[data-project-filter]'));
     const projectResultText = document.getElementById('projectResultText');
     function filterProjects(category) {

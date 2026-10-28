@@ -1325,3 +1325,53 @@ body:not(:has(#header)) > #portfolio.portfolio-page { padding-top: 32px; padding
 @media (prefers-reduced-motion: reduce) {
     .services-page #serviceTrack, .portfolio-page #projectTrack { scroll-behavior: auto; }
 }
+
+/* Click or keyboard-open a project in an image-style focused detail dialog. */
+.portfolio-page #projectTrack > .project-card { cursor: zoom-in; }
+.portfolio-page #projectTrack > .project-card:focus-visible { outline: 3px solid var(--brand-blue); outline-offset: 3px; }
+.project-modal {
+    width: min(980px, calc(100vw - 36px));
+    max-width: none;
+    max-height: calc(100dvh - 36px);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.72);
+    border-radius: 22px;
+    background: #f8f9fc;
+    color: var(--ink);
+    box-shadow: 0 28px 90px rgba(13,22,38,.34);
+}
+.project-modal::backdrop { background: rgba(10,18,32,.76); backdrop-filter: blur(5px); }
+.project-modal-shell { max-height: calc(100dvh - 38px); overflow-y: auto; overscroll-behavior: contain; }
+.project-modal-header { position: sticky; z-index: 5; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; border-bottom: 1px solid rgba(24,36,58,.12); background: rgba(255,255,255,.96); backdrop-filter: blur(14px); }
+.project-modal-header > div > span { color: var(--brand-red); font-size: .65rem; font-weight: 850; letter-spacing: .13em; }
+.project-modal-header h2 { margin: 2px 0 0; color: var(--ink); font-size: 1.05rem; line-height: 1.25; }
+.project-modal-close { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; min-height: 40px; padding: 0 13px; border: 1px solid rgba(24,36,58,.14); border-radius: 999px; background: #fff; color: var(--ink); font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; }
+.project-modal-close:hover { border-color: var(--brand-red); background: var(--brand-red); color: #fff; }
+.project-modal-content { padding: 16px; }
+.project-modal .project-modal-card { display: flex; width: 100%; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(24,36,58,.12); border-radius: 17px; background: #fff; box-shadow: 0 8px 28px rgba(24,36,58,.08); cursor: auto; }
+.project-modal .project-modal-card .project-image,
+.project-modal .project-modal-card .project-card:first-child .project-image { height: clamp(260px, 42vh, 440px); }
+.project-modal .project-modal-card .project-preview { min-height: 100%; padding: clamp(22px, 5vw, 48px); }
+.project-modal .project-modal-card .project-preview strong { max-width: 18ch; font-size: clamp(1.8rem, 5vw, 3rem); }
+.project-modal .project-modal-card .project-info { display: flex; flex-direction: column; padding: clamp(20px, 4vw, 34px); }
+.project-modal .project-modal-card .project-info h3 { margin: 0 0 9px; color: var(--ink); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; }
+.project-modal .project-modal-card .project-description { max-width: 760px; margin: 10px 0 14px; font-size: 1rem; line-height: 1.6; }
+.project-modal .project-modal-card .project-case-details { margin-top: 5px; }
+.project-modal .project-modal-card .project-case-details summary { min-height: 38px; color: var(--brand-red); }
+.project-modal .project-modal-card .project-case-details summary::after { content: "−"; }
+.project-modal .project-modal-card .project-case-details dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; margin: 0 0 16px; }
+.project-modal .project-modal-card .project-case-details dl > div { display: block; min-width: 0; padding: 13px 14px; border: 1px solid rgba(24,36,58,.09); border-radius: 12px; background: #f6f7fa; }
+.project-modal .project-modal-card .project-case-details dt { margin-bottom: 5px; color: var(--brand-red); font-size: .68rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.project-modal .project-modal-card .project-case-details dd { color: #465266; font-size: .87rem; line-height: 1.55; }
+.project-modal .project-modal-card .project-tech { margin-top: 10px; }
+@media (max-width: 600px) {
+    .project-modal { width: calc(100vw - 18px); max-height: calc(100dvh - 18px); border-radius: 17px; }
+    .project-modal-shell { max-height: calc(100dvh - 20px); }
+    .project-modal-header { padding: 11px 13px; }
+    .project-modal-content { padding: 8px; }
+    .project-modal .project-modal-card .project-image,
+    .project-modal .project-modal-card .project-card:first-child .project-image { height: clamp(190px, 34vh, 290px); }
+    .project-modal .project-modal-card .project-case-details dl { grid-template-columns: 1fr; }
+}
