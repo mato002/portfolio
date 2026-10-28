@@ -722,3 +722,93 @@ body:not(:has(#header)) > #portfolio.portfolio-page { background: radial-gradien
 @media (prefers-reduced-motion: reduce) {
     .services-page .service-card, .portfolio-page .project-card, .home-work-card { transition: none; }
 }
+
+/* Warm orange, rose, pink and amber palette from the user's reference. */
+:root {
+    --ink: #302b29;
+    --paper: #ebe9e1;
+    --muted: #655d59;
+    --violet: #e43d12;
+    --coral: #d6536d;
+    --lime: #efb11d;
+    --line: rgba(48,43,41,.15);
+    --brand-blue: #d6536d;
+    --brand-red: #e43d12;
+    --soft-surface: #f5f2eb;
+}
+body { background: var(--paper); color: var(--ink); }
+nav { background: rgba(235,233,225,.98); box-shadow: 0 8px 26px rgba(48,43,41,.09); }
+nav ul li a { color: var(--ink); }
+nav ul li a:hover { color: var(--brand-red); background: rgba(228,61,18,.08); }
+nav ul { background: var(--paper); }
+nav ul li a:not(.menu-close):hover,
+nav ul li a:not(.menu-close):active { color: var(--brand-red); background: rgba(228,61,18,.08); }
+nav .menu-toggle { border-color: var(--brand-red); background: var(--brand-red); color: #fff; }
+nav .menu-toggle .menu-text, nav .menu-toggle i { color: #fff; }
+#header {
+    background-color: var(--paper);
+    background-image: radial-gradient(ellipse at 80% 18%,rgba(255,162,182,.44),transparent 29%),
+                      radial-gradient(ellipse at 70% 85%,rgba(239,177,29,.2),transparent 27%),
+                      linear-gradient(112deg,#ebe9e1 0%,#f3eee6 62%,#f7dedf 100%);
+}
+#header::before { background: radial-gradient(circle at 84% 46%,rgba(214,83,109,.1),transparent 25%); }
+#header .header_text, #header .header_text h1, #header .job-title { color: var(--ink); }
+#header .greeting { color: var(--brand-red); }
+#header .highlight, #header .header_text h1 span { color: var(--brand-red); }
+#header .technologies .tech-item { border-color: rgba(48,43,41,.14); background: rgba(255,255,255,.58); color: #463d39; }
+#header .description { color: #514946; }
+#header .btn-primary { background: var(--brand-red); border-color: var(--brand-red); color: #fff; }
+#header .btn-primary:hover { background: #c92f0b; border-color: #c92f0b; color: #fff; }
+#header .btn-secondary { background: var(--brand-blue); border-color: var(--brand-blue); color: #fff; }
+#header .btn-secondary:hover { background: #bd405a; border-color: #bd405a; color: #fff; }
+#header .btn-ai-demo { color: #a93622; }
+.scroll-progress-bar, .section-title::after { background: var(--brand-red); }
+.home-business, #services, #certifications, #ai-demo { background: var(--soft-surface); }
+.home-business-examples span, .about-page .point, .about-page .skill-item { background: #fff; }
+.services-page .service-spotlight { background: linear-gradient(118deg,#e43d12 0%,#d6536d 62%,#efb11d 145%); }
+.services-page .service-spotlight .service-icon { background: #fff; color: var(--brand-red); }
+.services-page .service-spotlight .service-btn { border-color: #fff; color: #fff; }
+.services-page .service-spotlight .service-btn:hover { background: #fff; color: var(--brand-red); }
+.services-page .service-card:hover .service-icon,
+.service-card:hover .service-icon { background: #fff0f2; color: var(--brand-red); }
+.service-btn, .home-work-link, .project-case-details summary { color: var(--brand-red); }
+.service-filter.active, .project-filter.active { border-color: var(--brand-red); background: var(--brand-red); }
+.service-filter.active span { color: var(--brand-red); }
+.project-preview::before { background: linear-gradient(115deg,rgba(48,43,41,.52),rgba(228,61,18,.12)); }
+.project-preview-platform { background: #e43d12; }
+.project-preview-messaging { background: #d6536d; }
+.project-preview-finance { background: #a92d3f; }
+.project-preview-isp { background: #d6536d; }
+.project-preview-retail { background: #efb11d; }
+.project-preview-property { background: #c64054; }
+.project-preview-queue { background: #e43d12; }
+.about-page .intro-text p.current-focus { border-color: rgba(214,83,109,.22); border-left-color: var(--brand-red); background: linear-gradient(110deg,#fff0f2,#fff); }
+.about-page .point i { background: #fff0f2; color: var(--brand-red); }
+.stack-map-core { background: linear-gradient(145deg,#e43d12 0%,#d6536d 65%,#efb11d 145%); }
+.stack-map-index, .stack-map-core > i { color: #fff; }
+.stack-layer-index, .stack-map-footer > i { color: var(--brand-red); }
+.stack-layer small, .stack-layer > i { color: #b63e53; }
+.stack-layer > i { background: #fff0f2; }
+.stack-map-footer { background: #f5f2eb; }
+#ai-demo .ai-ask-button { background: var(--brand-red); }
+#ai-demo .ai-ask-button:hover { background: #c92f0b; }
+#ai-demo .ai-demo-answer { border-left-color: var(--brand-red); background: #fff0f2; }
+.tech-badge:hover { background: #fff0f2; color: var(--brand-red); }
+#contact { background: #302b29; }
+#contact .social-icons a, #contact .alternative-contact a { color: #efb11d !important; }
+#contact .btn2 { border-color: var(--brand-red); background: var(--brand-red); color: #fff; }
+#contact .btn2:hover { background: #c92f0b; border-color: #c92f0b; }
+#contact input:focus, #contact textarea:focus { border-color: #ffa2b6; }
+#footer { background: #302b29; }
+#footer .footer-section h4::after { background: var(--brand-red); }
+#footer .footer-links a:hover, #footer a:hover, #footer .contact-item i, #footer .made-with i { color: #efb11d; }
+.back-to-top { background: var(--brand-red); color: #fff; }
+:focus-visible { outline-color: #d6536d; }
+@media (max-width: 768px) {
+    nav#mainNav, nav#mainNav.nav-hidden, nav#mainNav.nav-visible { background: var(--paper); }
+    nav#mainNav .menu-toggle { background: var(--brand-red) !important; border-color: var(--brand-red) !important; color: #fff !important; }
+    nav#mainNav .menu-toggle .fa-solid.fa-bars, nav#mainNav .menu-text { color: #fff; }
+    nav#mainNav ul { background: #302b29 !important; border-left-color: var(--brand-red) !important; }
+    nav#mainNav ul li a:not(.menu-close):hover,
+    nav#mainNav ul li a:not(.menu-close):active { color: #ffa2b6 !important; background: rgba(228,61,18,.18) !important; }
+}
