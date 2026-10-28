@@ -440,6 +440,14 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
 .project-preview-platform { background: #b85c3d; }
 .project-preview-messaging { background: #284c5a; }
 .project-preview-finance { background: #54744e; }
+.about-page .about-content { grid-template-columns: minmax(260px, .72fr) minmax(0, 1.65fr); gap: clamp(28px, 5vw, 68px); align-items: start; }
+.about-page .about-image-section { max-width: none; }
+.about-page .image-wrapper { position: sticky; top: 145px; width: 100%; max-width: none; aspect-ratio: 4 / 5; }
+.about-page .about-image { object-position: center 38%; }
+.about-page .image-overlay { padding: 64px 22px 22px; }
+.about-page .overlay-content h3 { font-size: 1.15rem; }
+.about-page .overlay-content p { font-size: .82rem; }
+.about-page .about-text-section { min-width: 0; }
 @media (max-width: 768px) {
     #header .header_image { display: block; width: 100%; }
     .hero-portrait { width: min(100%, 420px); height: clamp(250px, 75vw, 360px); }
@@ -448,4 +456,9 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
     .project-preview span { align-items: flex-start; flex-direction: column; gap: 3px; font-size: 9px; }
     .project-preview span i { font-size: 8px; }
     .project-preview strong { font-size: clamp(.95rem, 4vw, 1.25rem); }
+}
+@media (max-width: 640px) {
+    .about-page .about-content { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .about-page .about-image-section { width: 100%; max-width: 390px; margin-inline: auto; }
+    .about-page .image-wrapper { position: relative; top: auto; aspect-ratio: 4 / 4.3; }
 }
