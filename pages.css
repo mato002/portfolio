@@ -1200,8 +1200,128 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
     line-height: 1.08;
     text-wrap: balance;
 }
+.about-page .about-tabs {
+    width: 100%;
+    margin-top: clamp(28px, 4vw, 48px);
+}
+.about-page .about-tabs .tab-navigation,
+.about-page .about-tabs .tab-contents {
+    width: 100%;
+    max-width: none;
+}
+.about-page .about-tabs .tab-navigation { justify-content: flex-start; }
+.about-page .about-tabs .stack-map { width: 100%; }
 @media (max-width: 900px) {
     .about-page .about-content { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     .about-page .about-image-section .image-wrapper { position: relative; top: auto; max-width: 460px; }
     .about-page .about-text-section { grid-column: 1; }
+    .about-page .about-tabs { margin-top: 30px; }
+}
+
+/* Compact horizontal browsing for long service and project collections. */
+body:not(:has(#header)) > #services.services-page,
+body:not(:has(#header)) > #portfolio.portfolio-page { padding-top: 32px; padding-bottom: 44px; }
+.services-page .services-header { margin-bottom: 20px; gap: 24px; }
+.services-page .services-intro .section-subtitle { margin-top: 22px; line-height: 1.55; }
+.services-page .services-header .service-spotlight { gap: 10px; padding: 22px !important; }
+.services-page .services-header .service-spotlight p { font-size: .86rem; line-height: 1.5; }
+.service-explorer { align-items: center; gap: 14px; margin: 18px 0 12px; padding-bottom: 10px; }
+.service-explorer-heading p { margin-top: 3px; }
+.service-filters { display: flex; align-items: center; gap: 8px; }
+.track-actions { display: flex; flex: 0 0 auto; gap: 7px; }
+.track-actions button { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(24,36,58,.15); border-radius: 50%; background: #fff; color: var(--ink); cursor: pointer; transition: .18s ease; }
+.track-actions button:hover { border-color: var(--brand-red); background: var(--brand-red); color: #fff; }
+.services-page .services-grid#serviceTrack {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 31%);
+    grid-template-columns: none;
+    grid-template-rows: minmax(0,1fr);
+    align-items: stretch;
+    gap: 14px;
+    margin: 0;
+    padding: 2px 2px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(173,0,45,.42) rgba(24,36,58,.08);
+}
+.services-page #serviceTrack > .service-card { min-width: 0; scroll-snap-align: start; }
+.services-page #serviceTrack > .service-card[hidden] { display: none !important; }
+.service-explorer + #serviceTrack { scroll-behavior: smooth; }
+.services-page #serviceTrack .service-features { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 6px; }
+.services-page #serviceTrack .service-features li { width: auto; }
+
+.portfolio-page .section-header { margin-bottom: 18px; }
+.portfolio-page .section-title { font-size: clamp(2.4rem,4.5vw,3.8rem); }
+.portfolio-page .portfolio-controls { align-items: center; gap: 12px; margin-bottom: 10px; }
+.portfolio-page .portfolio-eyebrow { display: none; }
+.portfolio-page #projectResultText { margin: 0; white-space: nowrap; }
+.portfolio-page .projects-grid#projectTrack {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(300px, 32%);
+    grid-template-columns: none;
+    grid-template-rows: minmax(0,1fr);
+    align-items: stretch;
+    gap: 14px;
+    margin: 0;
+    padding: 2px 2px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(173,0,45,.42) rgba(24,36,58,.08);
+}
+.portfolio-page #projectTrack > .project-card,
+.portfolio-page #projectTrack > .project-card:first-child,
+.portfolio-page #projectTrack > .project-card:nth-child(2),
+.portfolio-page #projectTrack > .project-card:nth-child(3),
+.portfolio-page #projectTrack > .project-card:nth-child(n+4) {
+    min-width: 0;
+    height: auto;
+    grid-column: auto;
+    grid-row: auto;
+    scroll-snap-align: start;
+}
+.portfolio-page #projectTrack > .project-card[hidden] { display: none !important; }
+.portfolio-page #projectTrack .project-image,
+.portfolio-page #projectTrack .project-card:first-child .project-image { height: 190px; }
+.portfolio-page #projectTrack .project-info,
+.portfolio-page #projectTrack .project-card:first-child .project-info { flex: 1 0 auto; padding: 17px 18px 18px; }
+.portfolio-page #projectTrack .project-info h3,
+.portfolio-page #projectTrack .project-card:first-child .project-info h3 { font-size: 1.16rem; }
+.portfolio-page #projectTrack .project-description { margin-bottom: 12px; font-size: .88rem; line-height: 1.5; }
+.portfolio-page .portfolio-controls .project-filters { flex: 1 1 auto; }
+@media (max-width: 900px) {
+    .services-page .services-grid#serviceTrack { grid-auto-columns: minmax(270px, 45%); }
+    .portfolio-page .projects-grid#projectTrack { grid-auto-columns: minmax(280px, 46%); }
+}
+@media (max-width: 640px) {
+    body:not(:has(#header)) > #services.services-page,
+    body:not(:has(#header)) > #portfolio.portfolio-page { padding-top: 20px; padding-bottom: 30px; }
+    .services-page .services-header { gap: 15px; margin-bottom: 14px; }
+    .services-page .services-intro .section-title { font-size: clamp(2rem,9vw,2.8rem); }
+    .services-page .services-intro .section-subtitle { margin-top: 18px; font-size: .9rem; }
+    .services-page .services-header .service-spotlight { gap: 8px; padding: 16px !important; border-radius: 15px; }
+    .services-page .services-header .service-spotlight p { font-size: .8rem; line-height: 1.45; }
+    .service-explorer { align-items: flex-start; flex-wrap: wrap; margin: 12px 0 8px; }
+    .service-explorer-heading { flex: 1 1 100%; }
+    .service-filters { flex: 1 1 auto; }
+    .track-actions button { width: 32px; height: 32px; }
+    .services-page .services-grid#serviceTrack { grid-auto-columns: minmax(78vw, 78vw); gap: 10px; }
+    .services-page #serviceTrack > .service-card { padding: 17px; }
+    .portfolio-page .section-header { margin-bottom: 13px; }
+    .portfolio-page .section-title { font-size: clamp(2.1rem,9vw,3rem); }
+    .portfolio-page .portfolio-controls { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .portfolio-page .portfolio-controls .project-filters { width: 100%; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 2px 1px 6px; }
+    .portfolio-page .projects-grid#projectTrack { grid-auto-columns: minmax(82vw,82vw); gap: 10px; }
+    .portfolio-page #projectTrack .project-image,
+    .portfolio-page #projectTrack .project-card:first-child .project-image { height: 175px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .services-page #serviceTrack, .portfolio-page #projectTrack { scroll-behavior: auto; }
 }

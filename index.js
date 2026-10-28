@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
             button.classList.toggle('active', active);
             button.setAttribute('aria-pressed', String(active));
         });
+        const serviceTrack = document.getElementById('serviceTrack');
+        if (serviceTrack) serviceTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        if (serviceFilterSelect) serviceFilterSelect.value = category;
         if (serviceResultText) serviceResultText.textContent = serviceLabels[category] || serviceLabels.all;
     }
     if (serviceFilters.length) {
@@ -117,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
             button.classList.toggle('active', active);
             button.setAttribute('aria-pressed', String(active));
         });
+        const projectTrack = document.getElementById('projectTrack');
+        if (projectTrack) projectTrack.scrollTo({ left: 0, behavior: 'smooth' });
         if (projectResultText) {
             const count = projectCards.filter(function(card) { return !card.hidden; }).length;
             projectResultText.textContent = category === 'all' ? 'Showing all ' + count + ' projects' : 'Showing ' + count + ' selected projects';
@@ -128,6 +133,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         filterProjects(document.querySelector('[data-project-filter].active')?.dataset.projectFilter || 'all');
     }
+
+    document.querySelectorAll('[data-scroll-track][data-scroll-step]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const track = document.getElementById(button.dataset.scrollTrack);
+            if (!track) return;
+            const card = track.querySelector(':scope > :not([hidden])');
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 12;
+            const distance = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+            track.scrollBy({ left: Number(button.dataset.scrollStep) * distance, behavior: 'smooth' });
+        });
+    });
 
     if (footerAccordionQuery.addEventListener) {
         footerAccordionQuery.addEventListener('change', syncFooterAccordions);
