@@ -1484,7 +1484,7 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
 
 /* A shallow 3D arc makes the horizontally browsed projects feel like a rotating sphere. */
 .portfolio-page #projectTrack {
-    perspective: 1250px;
+    perspective: 1000px;
     perspective-origin: 50% 46%;
     transform-style: preserve-3d;
 }
@@ -1496,6 +1496,5 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
         rotateY(var(--sphere-rotate, 0deg)) scale(var(--sphere-scale, 1));
 }
 @media (prefers-reduced-motion: reduce) {
-    .portfolio-page #projectTrack { perspective: none; }
-    .portfolio-page #projectTrack > .project-card { transform: none !important; }
+    .portfolio-page #projectTrack { perspective: 1450px; }
 }

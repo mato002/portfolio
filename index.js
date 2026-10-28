@@ -217,14 +217,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const trackBounds = projectTrack.getBoundingClientRect();
             const centerX = trackBounds.left + trackBounds.width / 2;
             const radius = Math.max(trackBounds.width / 2, 1);
+            const motionScale = reducedMotion.matches ? .55 : 1;
             projectTrack.querySelectorAll(':scope > .project-card:not([hidden])').forEach(function(card) {
                 const cardBounds = card.getBoundingClientRect();
                 const distance = Math.max(-1, Math.min(1, (cardBounds.left + cardBounds.width / 2 - centerX) / radius));
                 const edge = Math.abs(distance);
-                card.style.setProperty('--sphere-rotate', (-distance * 19).toFixed(2) + 'deg');
-                card.style.setProperty('--sphere-depth', (-edge * edge * 82).toFixed(2) + 'px');
-                card.style.setProperty('--sphere-lift', (edge * edge * 10).toFixed(2) + 'px');
-                card.style.setProperty('--sphere-scale', (1.035 - edge * .075).toFixed(3));
+                card.style.setProperty('--sphere-rotate', (-distance * 32 * motionScale).toFixed(2) + 'deg');
+                card.style.setProperty('--sphere-depth', (-edge * edge * 160 * motionScale).toFixed(2) + 'px');
+                card.style.setProperty('--sphere-lift', (edge * edge * 14 * motionScale).toFixed(2) + 'px');
+                card.style.setProperty('--sphere-scale', (1.04 - edge * .12 * motionScale).toFixed(3));
             });
         }
         function scheduleProjectSphereUpdate() {
