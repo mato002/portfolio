@@ -812,3 +812,114 @@ nav .menu-toggle .menu-text, nav .menu-toggle i { color: #fff; }
     nav#mainNav ul li a:not(.menu-close):hover,
     nav#mainNav ul li a:not(.menu-close):active { color: #ffa2b6 !important; background: rgba(228,61,18,.18) !important; }
 }
+
+/* Clean light design system: neutral canvas, rose support, orange CTAs only. */
+:root {
+    --ink: #111827;
+    --paper: #f4f3ed;
+    --muted: #6b7280;
+    --violet: #d6536d;
+    --coral: #d6536d;
+    --lime: #d6536d;
+    --line: #e5e7eb;
+    --brand-blue: #d6536d;
+    --brand-red: #e43d12;
+    --brand-cta: #e43d12;
+    --soft-surface: #f8f9fa;
+}
+body { background: var(--paper); color: var(--ink); }
+nav { background: rgba(248,249,250,.97); box-shadow: 0 6px 22px rgba(17,24,39,.07); }
+nav ul { background: #f8f9fa; }
+nav ul li a, nav ul li a:not(.menu-close) { color: var(--ink); }
+nav ul li a:hover, nav ul li a:not(.menu-close):hover,
+nav ul li a:not(.menu-close):active { color: #b83f57; background: #fbe9ed; }
+nav .menu-toggle { border-color: var(--line); background: #fff; color: var(--ink); }
+nav .menu-toggle .menu-text, nav .menu-toggle i { color: var(--ink); }
+#header {
+    background: var(--paper);
+    background-image: none;
+}
+#header::before { display: none; }
+#header .header_text, #header .header_text h1, #header .job-title { color: var(--ink); }
+#header .greeting { color: #b83f57; }
+#header .highlight, #header .header_text h1 span { color: #b83f57; }
+#header .technologies .tech-item { border-color: var(--line); background: #fff; color: #374151; }
+#header .description { color: #4b5563; }
+#header .btn-primary, #contact .btn2 { background: var(--brand-cta); border-color: var(--brand-cta); color: #fff; }
+#header .btn-primary:hover, #contact .btn2:hover { background: #c9340e; border-color: #c9340e; color: #fff; }
+#header .btn-secondary { border: 1px solid #d6536d; background: #fff; color: #b83f57; }
+#header .btn-secondary:hover { background: #fbe9ed; color: #8f3044; }
+#header .btn-ai-demo { color: #b83f57; }
+.hero-portrait { background: transparent; box-shadow: none; }
+.hero-portrait figcaption { color: #fff; }
+.scroll-progress-bar, .section-title::after { background: #d6536d; }
+.home-business, #services, #certifications, #ai-demo { background: #f8f9fa; }
+.home-business-examples span, .about-page .point, .about-page .skill-item { border-color: var(--line); background: #fff; }
+.services-page .service-spotlight { border: 1px solid var(--line); background: #fff; color: var(--ink); box-shadow: 0 12px 34px rgba(17,24,39,.06); }
+.services-page .service-spotlight h3 { color: var(--ink); }
+.services-page .service-spotlight p { color: var(--muted); }
+.services-page .service-spotlight .service-icon { background: #fbe9ed; color: #b83f57; }
+.services-page .service-spotlight .service-btn { border: 0; color: var(--brand-cta); }
+.services-page .service-spotlight .service-btn:hover { background: #fff1ed; color: #c9340e; }
+.services-page .service-card:hover .service-icon, .service-card:hover .service-icon { background: #fbe9ed; color: #b83f57; }
+.service-btn, .home-work-link, .project-case-details summary { color: #b83f57; }
+.service-filter.active, .project-filter.active { border-color: #d6536d; background: #d6536d; color: #fff; }
+.service-filter.active span { background: rgba(255,255,255,.25); color: #fff; }
+.project-preview { color: var(--ink); background: #fff; }
+.project-preview::before { background: linear-gradient(135deg,rgba(255,255,255,.15),rgba(214,83,109,.08)); }
+.project-preview::after { border-color: rgba(17,24,39,.1); }
+.project-preview-platform, .project-preview-messaging, .project-preview-finance,
+.project-preview-isp, .project-preview-retail, .project-preview-property,
+.project-preview-queue { background: #fff; }
+.project-preview span { color: #b83f57; }
+.project-preview strong { color: var(--ink); }
+.project-card, .portfolio-page .project-card, .home-work-card,
+.services-page .services-grid .service-card, .about-page .tab-contents { border-color: var(--line); background: #fff; }
+.project-card:hover, .portfolio-page .project-card:hover { border-color: rgba(214,83,109,.45); }
+.tech-badge, .project-tech .tech-badge { border: 1px solid #f0d5dc; background: #fbe9ed; color: #8f3044; }
+.tech-badge:hover { background: #f6dce3; color: #762638; }
+.about-page .intro-text p.current-focus { border-color: #f0d5dc; border-left-color: #d6536d; background: #fff; }
+.about-page .point i { background: #fbe9ed; color: #b83f57; }
+.stack-map-core { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.stack-map-core h3 { color: var(--ink); }
+.stack-map-core p { color: #374151; }
+.stack-map-core-note { color: var(--muted); }
+.stack-map-index, .stack-map-core > i { color: #b83f57; }
+.stack-map-layers, .stack-map-footer { border-color: var(--line); background: #fff; }
+.stack-layer-index, .stack-map-footer > i, .stack-layer small, .stack-layer > i { color: #b83f57; }
+.stack-layer > i { background: #fbe9ed; }
+.stack-map-footer { background: #f8f9fa; }
+#ai-demo .ai-ask-button { background: var(--brand-cta); }
+#ai-demo .ai-ask-button:hover { background: #c9340e; }
+#ai-demo .ai-demo-answer { border-left-color: #d6536d; background: #fbe9ed; }
+#contact { background: #111827; }
+#contact .social-icons a, #contact .alternative-contact a { color: #ffa2b6 !important; }
+#contact input:focus, #contact textarea:focus { border-color: #d6536d; }
+#footer { background: #111827; }
+#footer .footer-section h4::after { background: #d6536d; }
+#footer .footer-links a:hover, #footer a:hover, #footer .contact-item i, #footer .made-with i { color: #ffa2b6; }
+.back-to-top { background: #d6536d; color: #fff; }
+:focus-visible { outline-color: #d6536d; }
+body:not(:has(#header)) > #about,
+body:not(:has(#header)) > #services,
+body:not(:has(#header)) > #portfolio,
+body:not(:has(#header)) > #ai-demo { background: #f8f9fa; }
+body:not(:has(#header)) > #about.about-page,
+body:not(:has(#header)) > #portfolio.portfolio-page { background: #f4f3ed; }
+body:not(:has(#header)) > #contact { background: #f8f9fa; color: #111827; }
+#contact .contact-left h1, #contact .contact-left p,
+#contact .contact-left p i, #contact .contact-left .contact-intro,
+#contact .contact-right label { color: #111827; }
+#contact .contact-left .social-icons a { color: #b83f57; }
+#contact input, #contact textarea { border-color: #e5e7eb; background: #fff; color: #111827; }
+#contact input::placeholder, #contact textarea::placeholder { color: #6b7280; }
+#contact .alternative-contact p { color: #6b7280 !important; }
+#contact .alternative-contact a { color: #b83f57 !important; }
+@media (max-width: 768px) {
+    nav#mainNav, nav#mainNav.nav-hidden, nav#mainNav.nav-visible { background: #f8f9fa; }
+    nav#mainNav .menu-toggle { background: #fff !important; border-color: var(--line) !important; color: var(--ink) !important; }
+    nav#mainNav .menu-toggle .fa-solid.fa-bars, nav#mainNav .menu-text { color: var(--ink); }
+    nav#mainNav ul { background: #111827 !important; border-left-color: #d6536d !important; }
+    nav#mainNav ul li a:not(.menu-close):hover,
+    nav#mainNav ul li a:not(.menu-close):active { color: #ffa2b6 !important; background: rgba(214,83,109,.16) !important; }
+}
