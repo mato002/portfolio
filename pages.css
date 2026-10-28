@@ -1457,9 +1457,9 @@ nav#mainNav ul li a:not(.menu-close):focus-visible { color: #f0cf80 !important; 
         pointer-events: auto !important;
     }
     body:has(#header) nav#mainNav.nav-hidden {
-        opacity: 0;
-        transform: translateY(-100%);
-        pointer-events: none;
+        opacity: 0 !important;
+        transform: translateY(-100%) !important;
+        pointer-events: none !important;
     }
     body:has(#header) nav#mainNav.nav-visible {
         opacity: 1;
