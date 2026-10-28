@@ -1364,6 +1364,9 @@ body:not(:has(#header)) > #portfolio.portfolio-page { padding-top: 32px; padding
 @media (prefers-reduced-motion: reduce) {
     .services-page #serviceTrack, .portfolio-page #projectTrack { scroll-behavior: auto; }
 }
+@media (max-width: 640px) {
+    #footer { display: none !important; }
+}
 
 /* Click or keyboard-open a project in an image-style focused detail dialog. */
 .portfolio-page #projectTrack > .project-card { cursor: zoom-in; }
