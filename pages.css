@@ -904,6 +904,41 @@ body:not(:has(#header)) > #contact { background: #f8f9fa; color: #111827; }
 #contact input::placeholder, #contact textarea::placeholder { color: #6b7280; }
 #contact .alternative-contact p { color: #6b7280 !important; }
 #contact .alternative-contact a { color: #b83f57 !important; }
+
+/* Contact hero backdrop: Pexels photo by Zayed Hossain, photo 36706460.
+   Source: https://www.pexels.com/photo/developer-working-on-code-in-a-modern-office-36706460/ */
+body:not(:has(#header)) > #contact {
+    isolation: isolate;
+    overflow: hidden;
+    background-color: #10242b;
+    background-image:
+        linear-gradient(100deg, rgba(10, 25, 34, .91) 0%, rgba(10, 25, 34, .80) 48%, rgba(10, 25, 34, .62) 100%),
+        url("https://images.pexels.com/photos/36706460/pexels-photo-36706460.jpeg?auto=compress&cs=tinysrgb&w=2200");
+    background-position: center, center 46%;
+    background-size: cover;
+}
+body:not(:has(#header)) > #contact::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(ellipse at 86% 18%, rgba(73, 145, 132, .24), transparent 38%);
+    content: "";
+    pointer-events: none;
+}
+body:not(:has(#header)) > #contact > .container { position: relative; z-index: 1; }
+body:not(:has(#header)) > #contact .contact-left h1,
+body:not(:has(#header)) > #contact .contact-left p,
+body:not(:has(#header)) > #contact .contact-left p i,
+body:not(:has(#header)) > #contact .contact-left .contact-intro,
+body:not(:has(#header)) > #contact .contact-right label { color: #f8fafc; }
+body:not(:has(#header)) > #contact .contact-left .social-icons a { color: #f8fafc; }
+body:not(:has(#header)) > #contact .contact-left .social-icons a:hover { color: #10242b; background: #d8ba76; }
+body:not(:has(#header)) > #contact input,
+body:not(:has(#header)) > #contact textarea { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.96); color: #172033; }
+body:not(:has(#header)) > #contact input:focus,
+body:not(:has(#header)) > #contact textarea:focus { border-color: #d8ba76; outline: 3px solid rgba(216,186,118,.28); }
+body:not(:has(#header)) > #contact .alternative-contact p { color: rgba(248,250,252,.76) !important; }
+body:not(:has(#header)) > #contact .alternative-contact a { color: #f0cf80 !important; }
 @media (max-width: 768px) {
     nav#mainNav, nav#mainNav.nav-hidden, nav#mainNav.nav-visible { background: #f8f9fa; }
     nav#mainNav .menu-toggle { background: #fff !important; border-color: var(--line) !important; color: var(--ink) !important; }
