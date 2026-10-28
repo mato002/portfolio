@@ -1102,6 +1102,16 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
 .portfolio-page .project-preview::after { display: none; }
 .portfolio-page .project-preview span,
 .portfolio-page .project-preview strong { position: relative; z-index: 1; color: #fff; }
+.portfolio-page .project-preview > .project-cover-image {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.72) saturate(.88);
+}
 .portfolio-page .project-preview span { font-size: .72rem; font-weight: 800; letter-spacing: .09em; }
 .portfolio-page .project-preview span i { font-style: normal; }
 .portfolio-page .project-preview strong {
@@ -1112,6 +1122,21 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
     letter-spacing: -.04em;
     text-wrap: balance;
 }
+.portfolio-page .project-preview-retail > .project-cover-inset {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    width: min(40%, 340px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,.9);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(17,24,39,.32);
+}
+.portfolio-page .project-preview-retail strong { max-width: 12ch; }
 .project-preview-platform { background: linear-gradient(135deg,#e43d12,#ad2943); }
 .project-preview-messaging { background: linear-gradient(135deg,#a93455,#d6536d); }
 .project-preview-finance { background: linear-gradient(135deg,#852b43,#c34d58); }
@@ -1131,6 +1156,8 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
     .portfolio-page .project-preview span { gap: 3px; font-size: .57rem; }
     .portfolio-page .project-preview span i { font-size: .5rem; }
     .portfolio-page .project-preview strong { font-size: clamp(.95rem, 4vw, 1.3rem); }
+    .portfolio-page .project-preview-retail > .project-cover-inset { right: 12px; bottom: 12px; width: 39%; border-width: 2px; border-radius: 7px; }
+    .portfolio-page .project-preview-retail strong { max-width: 10ch; }
     .portfolio-page .project-description { font-size: .8rem; }
 }
 @media (max-width: 360px) {
