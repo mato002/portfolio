@@ -50,7 +50,7 @@
                 <p class="section-subtitle">From a simple shop system to software for a growing or multi-branch company, I can tailor the features to how you work. The examples below show the kinds of systems I can build or tailor; we can confirm whether a ready-made option fits or a custom build is needed.</p>
             </div>
 
-            <div class="service-card service-spotlight">
+            <div class="service-card service-spotlight" data-service-category="commerce">
                 <div class="service-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
                 <h3>Have a clothing store?</h3>
                 <p>A system can record sales, print or send receipts, track sizes and colours, alert you when popular items run low, manage suppliers, and show what is selling. If you sell online too, customers can browse products and place orders through a website.</p>
@@ -58,8 +58,19 @@
                 <a href="contact.html" class="service-btn">Tell me about your shop</a>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
+<div class="service-explorer">
+                <div class="service-explorer-heading"><span>FIND YOUR WORKFLOW</span><p id="serviceResultText" aria-live="polite">Showing retail &amp; production systems</p></div>
+                <div class="service-filters" role="group" aria-label="Browse services by business need">
+                    <button type="button" class="service-filter" data-service-filter="all" aria-pressed="false">All systems <span>14</span></button>
+                    <button type="button" class="service-filter active" data-service-filter="commerce" aria-pressed="true">Retail &amp; production <span>4</span></button>
+                    <button type="button" class="service-filter" data-service-filter="people" aria-pressed="false">Finance &amp; people <span>4</span></button>
+                    <button type="button" class="service-filter" data-service-filter="operations" aria-pressed="false">Property &amp; networks <span>3</span></button>
+                    <button type="button" class="service-filter" data-service-filter="digital" aria-pressed="false">Platforms &amp; APIs <span>3</span></button>
+                </div>
+            </div>
+
+                        <div class="services-grid">
+                <div class="service-card" data-service-category="commerce">
                     <div class="service-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
                     <h3>Shops, retail & wholesale</h3>
                     <p>For a kiosk, boutique, supermarket, pharmacy, hardware shop, agrovet, distributor, or chain of branches.</p>
@@ -73,7 +84,7 @@
                     <a href="contact.html" class="service-btn">Discuss a shop system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="commerce">
                     <div class="service-icon"><i class="fas fa-utensils" aria-hidden="true"></i></div>
                     <h3>Restaurants, hotels & hospitality</h3>
                     <p>Connect customer orders with the kitchen, till, stock, bookings, and management records.</p>
@@ -87,7 +98,7 @@
                     <a href="contact.html" class="service-btn">Discuss a hospitality system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="people">
                     <div class="service-icon"><i class="fas fa-coins" aria-hidden="true"></i></div>
                     <h3>SACCOs, lending & payments</h3>
                     <p>Organize member services and financial workflows for SACCOs, microfinance organizations, lenders, and savings groups.</p>
@@ -100,7 +111,7 @@
                     <a href="contact.html" class="service-btn">Discuss a finance system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="people">
                     <div class="service-icon"><i class="fas fa-school" aria-hidden="true"></i></div>
                     <h3>Schools & training centres</h3>
                     <p>Keep student, parent, fee, class, and staff information together for schools, colleges, and training providers.</p>
@@ -113,7 +124,7 @@
                     <a href="contact.html" class="service-btn">Discuss a school system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="operations">
                     <div class="service-icon"><i class="fas fa-house" aria-hidden="true"></i></div>
                     <h3>Property, construction & facilities</h3>
                     <p>Support landlords, property managers, contractors, and maintenance teams with clearer records and follow-up.</p>
@@ -126,7 +137,7 @@
                     <a href="contact.html" class="service-btn">Discuss a property system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="operations">
                     <div class="service-icon"><i class="fas fa-truck" aria-hidden="true"></i></div>
                     <h3>Agriculture, transport & logistics</h3>
                     <p>Track work and the movement of goods for farms, agrovets, transporters, delivery services, and distributors.</p>
@@ -139,7 +150,7 @@
                     <a href="contact.html" class="service-btn">Discuss an operations system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="operations">
                     <div class="service-icon"><i class="fas fa-wifi" aria-hidden="true"></i></div>
                     <h3>Internet providers & subscriptions</h3>
                     <p>Manage customer accounts and recurring services for ISPs and other subscription businesses.</p>
@@ -152,7 +163,7 @@
                     <a href="contact.html" class="service-btn">Discuss a billing system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="people">
                     <div class="service-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
                     <h3>Clinics, labs & healthcare</h3>
                     <p>Organize day-to-day administration for clinics, laboratories, and other care providers.</p>
@@ -165,7 +176,7 @@
                     <a href="contact.html" class="service-btn">Discuss a healthcare system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="commerce">
                     <div class="service-icon"><i class="fas fa-industry" aria-hidden="true"></i></div>
                     <h3>Manufacturing & workshops</h3>
                     <p>Track materials, jobs, stock, and service work for producers, repair shops, and workshops.</p>
@@ -178,7 +189,7 @@
                     <a href="contact.html" class="service-btn">Discuss a production system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="people">
                     <div class="service-icon"><i class="fas fa-people-group" aria-hidden="true"></i></div>
                     <h3>NGOs, agencies & membership organizations</h3>
                     <p>Coordinate projects, people, activities, and reporting for organizations serving members, clients, or communities.</p>
@@ -191,7 +202,7 @@
                     <a href="contact.html" class="service-btn">Discuss an organization system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="digital">
                     <div class="service-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
                     <h3>Growing companies & larger organizations</h3>
                     <p>Bring departments and locations into connected systems as operations become more complex.</p>
@@ -205,7 +216,7 @@
                     <a href="contact.html" class="service-btn">Discuss a company system</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="digital">
                     <div class="service-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
                     <h3>Websites, mobile apps & custom platforms</h3>
                     <p>Build a digital service around your customers, staff, members, or business process.</p>
@@ -218,7 +229,7 @@
                     <a href="contact.html" class="service-btn">Discuss a custom application</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-service-category="digital">
                     <div class="service-icon"><i class="fas fa-plug" aria-hidden="true"></i></div>
                     <h3>Payments & system integrations</h3>
                     <p>Connect business software with the services it needs to exchange information with.</p>

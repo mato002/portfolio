@@ -43,7 +43,7 @@
         </div>
     </nav>
 
-    <div id="portfolio">
+    <div id="portfolio" class="portfolio-page">
         <div class="container">
             <div class="section-header">
                 <h1 class="section-title">Featured Projects</h1>
@@ -52,8 +52,17 @@
             </div>
             
             <!-- Featured Projects Grid -->
-            <div class="projects-grid">
-                <div class="project-card featured">
+<div class="portfolio-controls">
+                <div><span class="portfolio-eyebrow">CASE STUDIES · SYSTEMS IN PRACTICE</span><p id="projectResultText" aria-live="polite">Showing all 7 projects</p></div>
+                <div class="project-filters" role="group" aria-label="Filter projects">
+                    <button type="button" class="project-filter active" data-project-filter="all" aria-pressed="true">All work</button>
+                    <button type="button" class="project-filter" data-project-filter="platforms" aria-pressed="false">Business platforms</button>
+                    <button type="button" class="project-filter" data-project-filter="integrations" aria-pressed="false">Payments &amp; networks</button>
+                    <button type="button" class="project-filter" data-project-filter="operations" aria-pressed="false">Operations</button>
+                </div>
+            </div>
+                        <div class="projects-grid">
+                <div class="project-card featured" data-project-category="platforms">
                     <div class="project-image">
                         <div class="project-preview project-preview-platform"><span>01 <i>BUSINESS PLATFORM</i></span><strong>Software shaped around daily operations</strong></div>
                     </div>
@@ -78,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="integrations">
                     <div class="project-image">
                         <div class="project-preview project-preview-messaging"><span>02 <i>CUSTOMER MESSAGING</i></span><strong>One place for customer conversations</strong></div>
                     </div>
@@ -104,7 +113,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="platforms">
                     <div class="project-image">
                         <div class="project-preview project-preview-finance"><span>03 <i>FINANCIAL SYSTEM</i></span><strong>Clearer loan and member workflows</strong></div>
                     </div>
@@ -129,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="integrations">
                     <div class="project-image">
                         <div class="project-preview project-preview-isp"><span>04 <i>ISP &amp; HOTSPOT BILLING</i></span><strong>Internet billing connected to network access</strong></div>
                     </div>
@@ -150,7 +159,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="operations">
                     <div class="project-image">
                         <div class="project-preview project-preview-retail"><span>05 <i>RETAIL POS &amp; INVENTORY</i></span><strong>Sales and stock across multiple branches</strong></div>
                     </div>
@@ -171,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="operations">
                     <div class="project-image">
                         <div class="project-preview project-preview-property"><span>06 <i>PROPERTY MANAGEMENT</i></span><strong>Rent collection and tenant ledgers in sync</strong></div>
                     </div>
@@ -192,7 +201,7 @@
                     </div>
                 </div>
 
-                <div class="project-card featured">
+                <div class="project-card featured" data-project-category="operations">
                     <div class="project-image">
                         <div class="project-preview project-preview-queue"><span>07 <i>QUEUE MANAGEMENT</i></span><strong>Clearer service flow across counters</strong></div>
                     </div>
