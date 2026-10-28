@@ -1163,3 +1163,45 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
 @media (max-width: 360px) {
     .portfolio-page .projects-grid { grid-template-columns: 1fr; }
 }
+
+/* About page: restore the portrait and pair it with the complete profile column. */
+.about-page .about-content {
+    display: grid;
+    grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: clamp(28px, 5vw, 64px);
+    margin-top: 0;
+    text-align: left;
+}
+.about-page .about-image-section {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+.about-page .about-image-section .image-wrapper {
+    position: sticky;
+    top: 150px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+}
+.about-page .about-image-section .about-image { width: 100%; height: 100%; object-fit: cover; }
+.about-page .about-text-section {
+    grid-column: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+.about-page .about-text-section .intro-text h2 {
+    margin-top: 0;
+    font-size: clamp(2rem, 3.6vw, 3.5rem);
+    line-height: 1.08;
+    text-wrap: balance;
+}
+@media (max-width: 900px) {
+    .about-page .about-content { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .about-page .about-image-section .image-wrapper { position: relative; top: auto; max-width: 460px; }
+    .about-page .about-text-section { grid-column: 1; }
+}
