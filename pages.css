@@ -1038,7 +1038,21 @@ body:not(:has(#header)) > #portfolio.portfolio-page {
     grid-auto-rows: min-content;
     gap: 24px;
     margin: 0;
+    border: 0;
+    background: transparent;
 }
+.portfolio-page::before,
+.portfolio-page::after,
+.portfolio-page > .container::before,
+.portfolio-page > .container::after,
+.portfolio-page .projects-grid::before,
+.portfolio-page .projects-grid::after {
+    content: none !important;
+    display: none !important;
+}
+.portfolio-page,
+.portfolio-page > .container,
+.portfolio-page .projects-grid { border-left: 0; border-right: 0; }
 .portfolio-page .project-card,
 .portfolio-page .project-card:first-child,
 .portfolio-page .project-card:nth-child(2),
