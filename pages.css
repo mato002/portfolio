@@ -1029,3 +1029,102 @@ body:not(:has(#header)) > #contact { background: #f8f9fa; color: #111827; }
     .services-page .services-intro .section-title { max-width: 760px; }
     .services-page .services-intro .section-subtitle { max-width: 760px; }
 }
+
+/* Portfolio case studies: clean two-column cards with readable project covers. */
+.portfolio-page .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    margin: 0;
+}
+.portfolio-page .project-card,
+.portfolio-page .project-card:first-child,
+.portfolio-page .project-card:nth-child(2),
+.portfolio-page .project-card:nth-child(3),
+.portfolio-page .project-card:nth-child(n+4) {
+    display: flex;
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
+    flex-direction: column;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(17,24,39,.04);
+}
+.portfolio-page .project-card:hover {
+    transform: translateY(-4px);
+    border-color: #d1d5db;
+    box-shadow: 0 12px 30px rgba(17,24,39,.09);
+}
+.portfolio-page .project-image,
+.portfolio-page .project-card:first-child .project-image {
+    height: clamp(190px, 24vw, 270px);
+}
+.portfolio-page .project-info,
+.portfolio-page .project-card:first-child .project-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: clamp(20px, 2.6vw, 32px);
+}
+.portfolio-page .project-info h3,
+.portfolio-page .project-card:first-child .project-info h3 {
+    margin: 0 0 10px;
+    color: #111827;
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -.035em;
+    overflow-wrap: anywhere;
+}
+.portfolio-page .project-category { color: #e43d12; }
+.portfolio-page .project-description { color: #4b5563; line-height: 1.65; }
+.portfolio-page .project-preview {
+    position: relative;
+    justify-content: space-between;
+    gap: 24px;
+    padding: clamp(20px, 3vw, 34px);
+    overflow: hidden;
+    color: #fff;
+}
+.portfolio-page .project-preview::before {
+    background: linear-gradient(130deg,rgba(17,24,39,.18),rgba(17,24,39,.58));
+}
+.portfolio-page .project-preview::after { display: none; }
+.portfolio-page .project-preview span,
+.portfolio-page .project-preview strong { position: relative; z-index: 1; color: #fff; }
+.portfolio-page .project-preview span { font-size: .72rem; font-weight: 800; letter-spacing: .09em; }
+.portfolio-page .project-preview span i { font-style: normal; }
+.portfolio-page .project-preview strong {
+    display: block;
+    max-width: 16ch;
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    line-height: 1.12;
+    letter-spacing: -.04em;
+    text-wrap: balance;
+}
+.project-preview-platform { background: linear-gradient(135deg,#e43d12,#ad2943); }
+.project-preview-messaging { background: linear-gradient(135deg,#a93455,#d6536d); }
+.project-preview-finance { background: linear-gradient(135deg,#852b43,#c34d58); }
+.project-preview-isp { background: linear-gradient(135deg,#733c76,#d6536d); }
+.project-preview-retail { background: linear-gradient(135deg,#c44722,#ef8a28); }
+.project-preview-property { background: linear-gradient(135deg,#a32d58,#65448e); }
+.project-preview-queue { background: linear-gradient(135deg,#e43d12,#8f3044); }
+@media (max-width: 600px) {
+    .portfolio-page .projects-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .portfolio-page .project-image,
+    .portfolio-page .project-card:first-child .project-image { height: clamp(125px, 38vw, 180px); }
+    .portfolio-page .project-info,
+    .portfolio-page .project-card:first-child .project-info { padding: 14px; }
+    .portfolio-page .project-info h3,
+    .portfolio-page .project-card:first-child .project-info h3 { font-size: 1rem; line-height: 1.2; }
+    .portfolio-page .project-preview { gap: 12px; padding: 14px; }
+    .portfolio-page .project-preview span { gap: 3px; font-size: .57rem; }
+    .portfolio-page .project-preview span i { font-size: .5rem; }
+    .portfolio-page .project-preview strong { font-size: clamp(.95rem, 4vw, 1.3rem); }
+    .portfolio-page .project-description { font-size: .8rem; }
+}
+@media (max-width: 360px) {
+    .portfolio-page .projects-grid { grid-template-columns: 1fr; }
+}
