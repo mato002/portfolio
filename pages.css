@@ -441,6 +441,10 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
 .project-preview-platform { background: #b85c3d; }
 .project-preview-messaging { background: #284c5a; }
 .project-preview-finance { background: #54744e; }
+.project-preview-isp { background: #2859a8; }
+.project-preview-retail { background: #b96a2f; }
+.project-preview-property { background: #7451a2; }
+.project-preview-queue { background: #c74d42; }
 .project-case-details { margin-top: 12px; border-top: 1px solid rgba(29,48,64,.1); color: var(--ink); }
 .project-case-details summary { display: inline-flex; min-height: 42px; align-items: center; gap: 8px; color: var(--violet); cursor: pointer; font-size: .82rem; font-weight: 750; list-style: none; }
 .project-case-details summary::-webkit-details-marker { display: none; }
