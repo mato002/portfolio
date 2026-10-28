@@ -131,7 +131,8 @@ body:not(:has(#header)) > #about.about-page { background: radial-gradient(ellips
 .about-page .tab-contents { padding: clamp(18px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.82); }
 .about-page .skills-container { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
 .about-page .skill-item { margin: 0; padding: 14px 16px; border: 1px solid rgba(29,48,64,.09); border-radius: 13px; background: #f7f8f5; }
-.about-page .skill-header { display: block; margin: 0; color: var(--ink); font-size: .9rem; }
+.about-page .skill-header { display: block; margin: 0 0 7px; color: var(--ink); font-size: .92rem; font-weight: 750; }
+.about-page .skill-detail { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.5; }
 .about-page .tab-contents ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .about-page .tab-contents ul li { position: relative; margin: 0; padding: 16px 18px 16px 20px; border: 1px solid rgba(29,48,64,.09); border-radius: 14px; background: #f7f8f5; color: var(--ink); line-height: 1.55; }
 .about-page .tab-contents ul li span { display: inline-block; margin-bottom: 5px; padding: 4px 9px; border-radius: 999px; background: #eaf0ec; color: var(--violet); font-size: .75rem; font-weight: 800; }
