@@ -60,8 +60,12 @@
                     <button type="button" class="project-filter" data-project-filter="integrations" aria-pressed="false">Payments &amp; networks</button>
                     <button type="button" class="project-filter" data-project-filter="operations" aria-pressed="false">Operations</button>
                 </div>
+                <div class="track-actions" aria-label="Project carousel controls">
+                    <button type="button" data-scroll-track="projectTrack" data-scroll-step="-1" aria-label="Scroll projects left"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" data-scroll-track="projectTrack" data-scroll-step="1" aria-label="Scroll projects right"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
             </div>
-                        <div class="projects-grid">
+                        <div class="projects-grid" id="projectTrack" role="region" aria-label="Project case studies. Scroll horizontally to browse." tabindex="0">
                 <div class="project-card featured" data-project-category="platforms">
                     <div class="project-image">
                         <div class="project-preview project-preview-platform"><span>01 <i>BUSINESS PLATFORM</i></span><strong>Software shaped around daily operations</strong></div>

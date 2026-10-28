@@ -46,16 +46,23 @@
     <div id="services" class="services-page">
         <div class="container">
             <div class="services-header">
-                <h1 class="section-title">Software for your kind of business</h1>
-                <p class="section-subtitle">From a simple shop system to software for a growing or multi-branch company, I can tailor the features to how you work. The examples below show the kinds of systems I can build or tailor; we can confirm whether a ready-made option fits or a custom build is needed.</p>
-            </div>
+                <div class="services-intro">
+                    <span class="services-eyebrow">TAILORED SOLUTIONS</span>
+                    <h1 class="section-title">Software for your kind of business.</h1>
+                    <p class="section-subtitle">From a simple shop system to software for a growing or multi-branch company, I tailor the features to how you work. We can start with a ready-made option or discuss a custom build.</p>
+                </div>
 
-            <div class="service-card service-spotlight" data-service-category="commerce">
-                <div class="service-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
-                <h3>Have a clothing store?</h3>
-                <p>A system can record sales, print or send receipts, track sizes and colours, alert you when popular items run low, manage suppliers, and show what is selling. If you sell online too, customers can browse products and place orders through a website.</p>
-                <p>That same idea can stay simple for one shop or grow to cover several branches, staff accounts, online orders, and management reports.</p>
-                <a href="contact.html" class="service-btn">Tell me about your shop</a>
+                <div class="service-spotlight">
+                    <div class="service-spotlight-heading">
+                        <span class="service-icon"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+                        <div>
+                            <h2>Built around your workflow</h2>
+                            <span class="service-spotlight-kinds">Retail, ISPs, property &amp; bookings</span>
+                        </div>
+                    </div>
+                    <p>Whether you run a shop that needs a POS, an ISP that needs billing, a property firm managing leases, or a service hub handling bookings, we can shape a system around the way you work—from one location to multiple branches.</p>
+                    <a href="contact.html" class="service-btn">Discuss your system requirements</a>
+                </div>
             </div>
 
 <div class="service-explorer">
@@ -70,9 +77,13 @@
                         <option value="digital">Platforms &amp; APIs (3)</option>
                     </select>
                 </div>
+                <div class="track-actions" aria-label="Service carousel controls">
+                    <button type="button" data-scroll-track="serviceTrack" data-scroll-step="-1" aria-label="Scroll services left"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" data-scroll-track="serviceTrack" data-scroll-step="1" aria-label="Scroll services right"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
             </div>
 
-                        <div class="services-grid">
+                        <div class="services-grid" id="serviceTrack" role="region" aria-label="Service examples. Scroll horizontally to browse." tabindex="0">
                 <div class="service-card" data-service-category="commerce">
                     <div class="service-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
                     <h3>Shops, retail & wholesale</h3>
